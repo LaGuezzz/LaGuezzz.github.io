@@ -72,3 +72,4 @@ function image(indice){
     img.src = "./images/Pendu_"+indice+".png";
     document.getElementById('image').replaceChildren(img);
 }
+

@@ -39,12 +39,19 @@ let render = () => {
     
 }
 
-let startGame = () => {   
-    let newMot =  motAleatoire();
-    game1 = new Pendu(newMot, 5);
-    render();
+let startGame = () => {  
+    if (document.getElementById("pseudo").value == "") {
+        alert("Veuillez indiquer votre pseudo ;-)");
+    } else {
+        joueur = new Player(document.getElementById("pseudo").value, 0, 0);
+        if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
+            players.push(joueur);
+        } 
+        let newMot =  motAleatoire();
+        game1 = new Pendu(newMot, 5);
+        render();
+    }
 }
 
-document.querySelector('#reset').addEventListener('click',startGame,recolor);
 
-startGame();
+document.querySelector('#start').addEventListener('click',startGame,recolor);
