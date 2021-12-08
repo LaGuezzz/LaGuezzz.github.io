@@ -117,14 +117,14 @@ function ModifyPlayersRanking()
             players[Player].Strokes+=count;
             players[Player].Played+=1
             players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
-            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
+            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'><span id='top'>TOP10</span>/th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
             DisplayTable();
         }
         else
         {
             let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
             players.push(Player);
-            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
+            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'><span id='top'>TOP10</span></th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
             DisplayTable();
         }
     document.getElementById('ObjectImage').innerHTML="";
