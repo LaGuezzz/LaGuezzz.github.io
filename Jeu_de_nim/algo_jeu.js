@@ -1,11 +1,11 @@
 let count;
 let Nb;
-let players = new Array;
+let playersNim = new Array;
 let joueur;
 
 function EndGame(win) {
     ActuTabScore(win);
-    document.getElementById("tblPlayers").innerHTML = "";
+    document.getElementById("tblplayersNim").innerHTML = "";
     document.getElementById("allumettes").innerHTML = "";
     ActuAffScore();
     document.getElementById("info_jeu").style.display = "block";
@@ -13,27 +13,28 @@ function EndGame(win) {
 }
 
 function ActuTabScore(win) {
-    let index = players.findIndex((player) => player.Pseudo == joueur.Pseudo);
+    let index = playersNim.findIndex((player) => player.Pseudo == joueur.Pseudo);
     if (win == 1) {
-        players[index].Win++;
+        playersNim[index].Win++;
     }
-    players[index].Played++;
-    players[index].Percentage = (players[index].Win / players[index].Played) * 100;
-    players.sort(function(a,b) {
+    playersNim[index].Played++;
+    playersNim[index].Percentage = (playersNim[index].Win / playersNim[index].Played) * 100;
+    playersNim.sort(function(a,b) {
         if (b.Percentage != a.Percentage) {
             return b.Percentage - a.Percentage;
         } else {
             return b.Played - a.Played;
         }
     });
+    localStorage.setItem("playersNim", JSON.stringify(playersNim));
 }
 
 function ActuAffScore() {
-    document.getElementById("tblPlayers").innerHTML = "<thead><tr><th colspan='4'><span id='top'> TOP 10 </span>"+
+    document.getElementById("tblplayersNim").innerHTML = "<thead><tr><th colspan='4'><span id='top'> TOP 10 </span>"+
         "</th></tr><tr><th> Pseudo </th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th>"+
         "</tr></thead><tbody></tbody>";
-    for (let i = 0; i < Math.min(players.length, 10); i++) {
-        AddPlayer(players[i]);
+    for (let i = 0; i < Math.min(playersNim.length, 10); i++) {
+        AddPlayer(playersNim[i]);
     }
 }
 
@@ -206,7 +207,7 @@ class Player {
 }
 
 function AddPlayer(Player) {
-    const tablePlayers = document.getElementById("tblPlayers");
+    const tableplayersNim = document.getElementById("tblplayersNim");
     const PlayerRow = document.createElement("TR");
     const PseudoCell = document.createElement("TD");
     PseudoCell.innerText = Player.Pseudo;
@@ -220,7 +221,7 @@ function AddPlayer(Player) {
     PlayerRow.appendChild(WinCell);
     PlayerRow.appendChild(PlayedCell);
     PlayerRow.appendChild(PercentageCell);
-    tablePlayers.appendChild(PlayerRow);
+    tableplayersNim.appendChild(PlayerRow);
 }
 
 function AffJeu() {
@@ -233,14 +234,22 @@ function AffJeu() {
     document.getElementById("nb_allumettes").innerText = "Il reste 21 allumettes";
 }
 
+function LoadplayersNimRanking()
+{
+    playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
+    ActuAffScore();
+}
+
+LoadplayersNimRanking();
+
 function Init_Nim() {
     if (document.getElementById("pseudo").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
     } else {
         document.getElementById("jeu").style.display = "block";
         joueur = new Player(document.getElementById("pseudo").value, 0, 0);
-        if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
-            players.push(joueur);
+        if (!(playersNim.find(player => player.Pseudo==joueur.Pseudo))) {
+            playersNim.push(joueur);
         }
         count=0;
         Nb=21;
