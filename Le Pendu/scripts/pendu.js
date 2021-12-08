@@ -47,8 +47,6 @@ class Pendu {
         } else if (this.status === 'failed') {
             return `Dommage! le mot était "${this.mot.join('')}" `
         } else {
-            win = 1;
-            EndGame(win);
             return "Bien joué! vous avez trouvé le mot!"
         }
     }
