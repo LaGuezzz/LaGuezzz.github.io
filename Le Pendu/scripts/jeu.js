@@ -47,7 +47,7 @@ let startGame = () => {
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
         }
-        //document.getElementById("start").disabled = true;
+        document.getElementById("start").disabled = true;
         let img = document.createElement("img");
         img.src = "./images/base.png";
         document.getElementById('image').replaceChildren(img) 
@@ -61,7 +61,7 @@ function EndGame(win) {
     ActuTabScore(win);
     document.getElementById("tblPlayers").innerHTML = "";
     ActuAffScore();
-    //document.querySelector('#start').disabled = false;
+    document.querySelector('#start').disabled = false;
     
 
 }
