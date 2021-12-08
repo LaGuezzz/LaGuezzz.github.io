@@ -82,7 +82,7 @@ function DisplayTable()
 {
     players.sort(function(a,b){
         if (b.AverageStrokes!=a.AverageStrokes){
-           return b.AverageStrokes-a.AverageStrokes;
+           return a.AverageStrokes-b.AverageStrokes;
         }else{
            return b.Played-a.Played;
         }});
