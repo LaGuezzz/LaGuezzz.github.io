@@ -162,7 +162,7 @@ function compareprice()
 function LoadPlayersRanking()
 {
     players=JSON.parse(localStorage.getItem("players")||"[]");
-    DisplayTable(players);
+    DisplayTable();
 }
 
 LoadPlayersRanking();
