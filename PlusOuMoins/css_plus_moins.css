@@ -7,6 +7,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
+#tblPlayers {
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 #info_player {
     text-align: center;
 }
