@@ -1,6 +1,7 @@
 #jeu {
     display:grid;
     grid-template-columns: repeat(2, 1fr);
+    text-align:center;
 }
 
 #info_player {
