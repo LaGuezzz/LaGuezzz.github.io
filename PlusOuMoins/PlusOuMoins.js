@@ -79,11 +79,11 @@ function AddPlayerRow(Player)
 
 function DisplayTable()
 {
-     players.sort(function(a,b){
-       if (b.AverageStrokes!=a.AverageStrokes){
-           return b.AverageStrokes-a.AverageStrokes
-       }else{
-           return b.Played-a.Played
+    players.sort(function(a,b){
+        if (b.AverageStrokes!=a.AverageStrokes){
+           return b.AverageStrokes-a.AverageStrokes;
+        }else{
+           return b.Played-a.Played;
         }});
     if (players.length>10)
     {
