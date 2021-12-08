@@ -33,7 +33,7 @@ function InputImage()
 {
     if (document.getElementById('PseudoInput').value=="")
     {
-        alert("Veuillez indiquer votre pseudo ;-)")
+        alert("Veuillez indiquer votre pseudo ;-)");
     }
     else
     {
