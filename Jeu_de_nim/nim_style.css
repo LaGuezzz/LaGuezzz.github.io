@@ -1,0 +1,24 @@
+#principe {
+    border: 3px solid white;
+    text-align: center;
+}
+
+#principe1 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+body {
+    text-align: center;
+}
+
+#aff_central {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#tblPlayers {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}

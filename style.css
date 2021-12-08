@@ -1,0 +1,48 @@
+html {
+    background-color: black;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#footer {
+    position:fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    height:50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#top {
+    color:orangered;
+    font-size: large;
+}
+
+#nim a, #nim {
+    color:yellow;
+}
+
+#shifumi a, #shifumi{
+    color:magenta;
+}
+
+#pendu a, #pendu {
+    color:lime;
+}
+
+#juste_prix a, #juste_prix {
+    color:cyan;
+}
+
+#accueil a, #accueil {
+    color:orangered;
+}
+
+#nim a:hover, #shifumi a:hover, #pendu a:hover, #juste_prix a:hover, #accueil a:hover {
+    color: pink;
+}

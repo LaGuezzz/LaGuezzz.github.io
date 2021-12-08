@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="nim_style.css">
+    <script type="text/javascript" src="algo_jeu.js"> </script>
+    <title>Jeu de Nim</title>
+</head>
+<header>
+    <h1 id="nim">
+        Jeu de Nim
+    </h1>
+    <div id="principe">
+        <p id="principe1"> Principe du jeu :</p>
+        <p> 21 allumettes sont disposées devant vous. Chacun votre tour, vous pourrez décider d'en enlever 1, 2 ou 3.
+            Celui qui enlève la dernière allumette a perdu.
+        </p>
+    </div>
+</header>
+<br>
+<body>
+    <div id="aff_central">
+        <div>
+            <table border="1" id="tblPlayers">
+                <thead>
+                    <tr>
+                        <th colspan="4" id="top">
+                            TOP 10
+                        </th>
+                    </tr>
+                    <tr>
+                        <th> Pseudo </th>
+                        <th> Parties gagnées </th>
+                        <th> Parties jouées </th>
+                        <th> Pourcentage de victoire </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="info_jeu">
+            <div>
+                <input type="text" id="pseudo" placeholder="Pseudo">
+            </div>
+            <div>
+                <p> Choisissez le niveau de difficulté </p>
+                <input type="radio" id="easy" name="difficulté" checked> Facile
+                <input type="radio" id="inter" name="difficulté"> Intermédiaire
+                <input type="radio" id="hard" name="difficulté"> Difficile
+            </div>
+            <div>
+                <p> Voulez vous jouer en premier ? </p>
+                <input type="radio" id="yes" name="commencer" checked> OUI
+                <input type="radio" id="no" name="commencer"> NON
+            </div>
+            <br>
+            <div>
+                <button type="button" id="play" onclick="Init_Nim()"> Jouer </button>
+            </div> <br>
+        </div>
+        <div id="jeu" style="display: none;">
+            <div id="allumettes">
+
+            </div>
+            <p id="nb_allumettes"> Il reste 21 allumettes. </p>
+            <p id="res"> </p>
+            <div>
+                <p> Combien d'allumettes voulez-vous enlever ? </p>
+                <input type="radio" name="enlever" id="one" checked> 1
+                <input type="radio" name="enlever" id="two"> 2
+                <input type="radio" name="enlever" id="three"> 3 <br> <br>
+                <button type="button" id="retirer" onclick="Enlever()"> Valider </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div id="footer">
+        <div id="shifumi">
+            <a href="../Shifumi/shifumi.html"> Shifumi </a>
+        </div>
+        <div id="pendu">
+            <a href="../Le Pendu/pendu.html"> Le Pendu </a>
+        </div>
+        <div id="accueil">
+            <a href="../Page_garde.html"> Accueil </a>
+        </div>
+        <div id="juste_prix">
+            <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+        </div>
+        <div id="nim">
+            <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
+        </div>
+    </div>
+</footer>
+
+</html>

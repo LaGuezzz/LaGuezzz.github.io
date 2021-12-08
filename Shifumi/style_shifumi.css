@@ -1,0 +1,63 @@
+#btn:active {
+    background: red;
+}
+
+
+aside {
+    width: 20%;
+    display: inline-table;
+    font-size: x-large;
+}
+
+main {
+    text-align: center;
+    font-size: x-large;
+}
+
+.ligne1 {
+    text-align: left;
+    display: inline-flex;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.un {
+    grid-column: 1;
+    grid-row: 1;
+    width: 40%;
+    border: black solid
+}
+
+.deux {
+    grid-column: 3;
+    grid-row: 1;
+    width: 40%;
+    border: black solid;
+}
+
+.trois {
+    grid-column: 2;
+    grid-row: 2;
+    width: 40%;
+    border: black solid
+}
+
+.result{
+    animation-duration: 5s;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

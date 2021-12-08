@@ -1,0 +1,21 @@
+.centre
+{
+	width:800px;
+	float:left;
+	text-align:center;
+	height:auto;
+}
+
+.lettre
+{
+	float:left;
+	margin:4px;
+	text-align:center;
+	width:35px;
+	height:30px;
+	padding-top:5px;
+	background-color:#EDEEEE;
+	border:#333 1px solid;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;	
+}

@@ -1,0 +1,80 @@
+<!Doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="css_plus_moins.css">
+    <script type="text/javascript" src="PlusOuMoins.js"></script>
+    <title>Le Juste Prix</title>
+</head>
+
+<header>
+    <div id="titre">
+        <h1 id="juste_prix"> Le Juste Prix </h1>
+        <img src="Objects/Le_Juste_Prix.jpg" />
+    </div>
+</header>
+
+<body>
+    <div id="jeu">
+        <div>
+            <div>
+                <input type="text" id="PseudoInput" placeholder="Pseudo">
+            </div>
+            <button type="button" id="ObjectInput" onclick="InputImage()">Générer un objet aléatoire</button>
+            <div id="ObjectImage">
+            </div>
+            <div>
+                Entrez un prix:<input type="number" id="PriceInput" />
+                <button type="button" id="Validate" onclick="compareprice()">Valider!</button>
+            </div>
+            <div id="Result">
+
+            </div>
+        </div>
+        <div>
+            <table border="1" id="tblPlayers">
+                <thead>
+                    <tr>
+                        <th colspan="3" style="color:yellow">TOP10</th>
+                    </tr>
+                    <th>Pseudo</th>
+                    <th>Parties jouées</th>
+                    <th>Nombre de coups moyens</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div id="UserInput">
+        Entrez le nom:<input type="text" id="ImgName" /><br>
+        Ajoutez l'image correspondante:<input type="file" id="ImgFile" /><br>
+        Ajoutez le prix:<input type="number" id="ImgPrice" /><br>
+        <button type="button" id="ValidateAdd" onclick="UserAddObject()">Valider l'ajout!</button>
+    </div>
+</body>
+
+<footer>
+    <div id="footer">
+        <div id="shifumi">
+            <a href="../Shifumi/shifumi.html"> Shifumi </a>
+        </div>
+        <div id="pendu">
+            <a href="../Le Pendu/pendu.html"> Le Pendu </a>
+        </div>
+        <div id="accueil">
+            <a href="../Page_garde.html"> Accueil </a>
+        </div>
+        <div id="juste_prix">
+            <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+        </div>
+        <div id="nim">
+            <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
+        </div>
+    </div>
+</footer>
+
+</html>

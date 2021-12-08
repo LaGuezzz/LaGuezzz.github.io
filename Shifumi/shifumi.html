@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="shifumi_js.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style_shifumi.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title> Shifumi </title>
+</head>
+
+<header>
+    <h1 id="shifumi"> Pierre Papier Ciseaux </h1>
+</header>
+
+<body>
+
+    <div class="ligne1">
+        <main>
+            <div class="wrapper">
+                <input type="image" class="un" src="Images/paper.png" title="FEUILLE" width="20%" onclick=FEUILLE()>
+                <input type="image" class="deux" src="Images/scissors.png" title="CISEAUX" width="20%"
+                    onclick=CISEAUX()>
+                <input type="image" class="trois" src="Images/rock.png" title="PIERRE" width="20%" onclick=PIERRE()>
+            </div>
+
+            <input type="button" value="Lancer la partie" title="JOUER" width="30%" onclick=JOUER()>
+
+            <div>Vous jouez : <b><span id="Joueur"></span></b></div>
+            <div>L'ordinateur joue : <b><span id="ordinateur"></span></b></div>
+            <div>Résultat de la partie : <b><span id="resultat"></span></b></div>
+
+        </main>
+
+        <aside>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <label> Nom du Joueur </label>
+                    </td>
+                    <td>
+                        <input type="text" id="PlayerName" />
+                    </td>
+                </tr>
+
+            </tbody>
+
+            <table border='1' id="Historique">
+                <thead>
+                    <tr>
+                        <th>Nom du Joueur</th>
+                        <th>Choix du Joueur</th>
+                        <th>Choix de l'Ordinateur</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody id="HistoriqueSelec">
+                </tbody>
+
+            </table>
+        </aside>
+    </div>
+
+    <article>
+
+
+    </article>
+
+
+</body>
+
+<footer>
+    <div id="footer">
+        <div id="shifumi">
+            <a href="../Shifumi/shifumi.html"> Shifumi </a>
+        </div>
+        <div id="pendu">
+            <a href="../Le Pendu/pendu.html"> Le Pendu </a>
+        </div>
+        <div id="accueil">
+            <a href="../Page_garde.html"> Accueil </a>
+        </div>
+        <div id="juste_prix">
+            <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+        </div>
+        <div id="nim">
+            <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
+        </div>
+    </div>
+</footer>
+
+</html>

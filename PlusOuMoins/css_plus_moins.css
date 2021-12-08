@@ -1,0 +1,14 @@
+#titre, #jeu {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#info_player {
+    text-align: center;
+}
+
+img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
