@@ -30,7 +30,7 @@ function ActuTabScore(win) {
 }
 
 function ActuAffScore() {
-    document.getElementById("tblplayersNim").innerHTML = "<thead><tr><th colspan='4'><span id='top'> TOP 10 </span>"+
+    document.getElementById("tblplayers").innerHTML = "<thead><tr><th colspan='4'><span id='top'> TOP 10 </span>"+
         "</th></tr><tr><th> Pseudo </th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th>"+
         "</tr></thead><tbody></tbody>";
     for (let i = 0; i < Math.min(playersNim.length, 10); i++) {
@@ -207,7 +207,7 @@ class Player {
 }
 
 function AddPlayer(Player) {
-    const tableplayersNim = document.getElementById("tblplayersNim");
+    const tableplayersNim = document.getElementById("tblplayers");
     const PlayerRow = document.createElement("TR");
     const PseudoCell = document.createElement("TD");
     PseudoCell.innerText = Player.Pseudo;
