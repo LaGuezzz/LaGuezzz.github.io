@@ -29,7 +29,7 @@ function ActuTabScore(win) {
 }
 
 function ActuAffScore() {
-    document.getElementById("tblPlayers").innerHTML = "<thead><tr><th colspan="4"><span id='top'> TOP 10 </span>"+
+    document.getElementById("tblPlayers").innerHTML = "<thead><tr><th colspan='4'><span id='top'> TOP 10 </span>"+
         "</th></tr><tr><th> Pseudo </th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th>"+
         "</tr></thead><tbody></tbody>";
     for (let i = 0; i < Math.min(players.length, 10); i++) {
