@@ -31,7 +31,7 @@ img {
     top:0;
     opacity:0;
     transition:0.5s;
-    vertical-align:center;
+    vertical-align:baseline;
 }
 
 .conteneur:hover .imgcontenu {
