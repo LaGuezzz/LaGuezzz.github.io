@@ -1,3 +1,9 @@
+let objectarray=new Array();
+let currentobject;
+let count=0;
+let players = new Array();
+let gameinprogress=false;
+
 function addobject(name, price, source) {
     this.name = name;
     this.price = price;
@@ -10,6 +16,11 @@ function addtoarray(name,price,source,array){
     array.push(object);
 
 }
+
+addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
+addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
+addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
+addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
 
 function InputImage()
 {
@@ -68,7 +79,6 @@ function AddPlayerRow(Player)
 
 function DisplayTable()
 {
-    document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead>";
     players.sort((Player1,Player2)=>Player1.AverageStrokes-Player2.AverageStrokes);
     if (players.length>10)
     {
@@ -89,7 +99,7 @@ function DisplayTable()
 function LoadPlayersRanking()
 {
     let players=JSON.parse(localStorage.getItem("players")||"[]");
-    DisplayTable(players);
+    DisplayTable();
 }
 
 function ModifyPlayersRanking()
@@ -101,13 +111,15 @@ function ModifyPlayersRanking()
             players[Player].Strokes+=count;
             players[Player].Played+=1
             players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
-            DisplayTable(players);
+            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
+            DisplayTable();
         }
         else
         {
             let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
             players.push(Player);
-            DisplayTable(players);
+            document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead><tbody></tbody>";
+            DisplayTable();
         }
     document.getElementById('ObjectImage').innerHTML="";
     count=0;
@@ -115,29 +127,6 @@ function ModifyPlayersRanking()
     localStorage.setItem("players", JSON.stringify(players));
 }
 
-function ModifyPlayersRanking()
-{
-    players=JSON.parse(localStorage.getItem("players")||[]);
-    if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
-            {
-                Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
-                console.log(Player);
-                players[Player].Strokes+=count;
-                players[Player].Played+=1
-                players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
-                DisplayTable(players);
-            }
-            else
-            {
-                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
-                players.push(Player);
-                DisplayTable(players);
-            }
-    document.getElementById('ObjectImage').innerHTML="";
-    count=0;
-    gameinprogress=false;
-    localStorage.setItem("players", JSON.stringify(players));
-}
 
 function compareprice()
 {
@@ -172,41 +161,9 @@ function compareprice()
 
 function LoadPlayersRanking()
 {
-    players=JSON.parse(localStorage.getItem("players")||[]);
+    players=JSON.parse(localStorage.getItem("players")||"[]");
     DisplayTable(players);
 }
 
-function ModifyPlayersRanking()
-{
-    players=JSON.parse(localStorage.getItem("players")||[]);
-    if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
-            {
-                Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
-                console.log(Player);
-                players[Player].Strokes+=count;
-                players[Player].Played+=1
-                players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
-                DisplayTable(players);
-            }
-            else
-            {
-                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
-                players.push(Player);
-                DisplayTable(players);
-            }
-    document.getElementById('ObjectImage').innerHTML="";
-    count=0;
-    gameinprogress=false;
-    localStorage.setItem("players", JSON.stringify(players));
-}
-
-let objectarray=new Array();
-let currentobject;
-let count=0;
-let players = new Array();
-let gameinprogress=false;
 LoadPlayersRanking();
-addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
-addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
-addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
-addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
+
