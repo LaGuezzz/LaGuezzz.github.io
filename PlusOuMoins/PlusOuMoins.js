@@ -205,7 +205,6 @@ let currentobject;
 let count=0;
 let players = new Array();
 let gameinprogress=false;
-
 LoadPlayersRanking();
 addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
 addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
