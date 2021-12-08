@@ -1,5 +1,5 @@
 
-const objectarray= new Array();
+let objectarray=new Array();
 let currentobject;
 let count=0;
 let playerarray = new Array();
@@ -22,9 +22,12 @@ function addtoarray(name,price,source,array){
 
 
 addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
-addtoarray("Dragon Blanc Aux Yeux Bleus",1000,"Objects/DragonBlanc.png",objectarray);
+addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
 addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
 addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
+
+
+
 
 function InputImage()
 {
@@ -94,20 +97,7 @@ function DisplayTable()
 
     }
 }
-function addobjectUser(name, price) {
-    this.name = name;
-    this.price = price;
-    this.img=document.createElement("img");
-    this.img.file=document.getElementById("ImgFile").files[0];
-}
 
-function UserAddObject()
-{
-    nameobject=document.getElementById("ImgName");
-    price=document.getElementById("ImgPrice");
-    let object = new addobjectUser(nameobject,price);;
-    objectarray.push(object);
-}
 
 function compareprice()
 {
