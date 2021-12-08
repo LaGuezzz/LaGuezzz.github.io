@@ -80,12 +80,6 @@ function AddPlayerRow(Player)
 function DisplayTable()
 {
     players.sort((Player1,Player2)=>Player1.AverageStrokes-Player2.AverageStrokes);
-//     players.sort(function(a,b){
-//         if (b.AverageStrokes!=a.AverageStrokes){
-//             return b.AverageStrokes-a.AverageStrokes
-//         }else{
-//             return b.Played-a.Played
-//         }});
     if (players.length>10)
     {
         for(let i=0;i<10;i++)
@@ -164,6 +158,13 @@ function compareprice()
 
         }
 }
+
+function LoadPlayersRanking()
+{
+    players=JSON.parse(localStorage.getItem("players")||"[]");
+    DisplayTable(players);
+}
+
 
 
 LoadPlayersRanking();
