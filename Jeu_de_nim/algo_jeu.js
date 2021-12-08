@@ -26,7 +26,7 @@ function ActuTabScore(win) {
             return b.Played - a.Played;
         }
     });
-    localStorage.setItem("playersNim", JSON.stringify(playersNim));
+    //localStorage.setItem("playersNim", JSON.stringify(playersNim));
 }
 
 function ActuAffScore() {
@@ -234,13 +234,13 @@ function AffJeu() {
     document.getElementById("nb_allumettes").innerText = "Il reste 21 allumettes";
 }
 
-function LoadplayersNimRanking()
+/*function LoadplayersNimRanking()
 {
     playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
     ActuAffScore();
 }
 
-LoadplayersNimRanking();
+LoadplayersNimRanking();*/
 
 function Init_Nim() {
     if (document.getElementById("pseudo").value == "") {
