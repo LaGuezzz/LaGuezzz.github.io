@@ -67,5 +67,3 @@ function EndGame(win) {
     
 
 }
-
-document.querySelector('#start').addEventListener('click',startGame,recolor);
