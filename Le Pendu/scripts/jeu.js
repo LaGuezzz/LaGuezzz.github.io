@@ -2,6 +2,7 @@ let game1;
 let motDIV = document.querySelector('#mot');
 let restantDIV = document.querySelector('#tentatives');
 let butt=document.querySelector('#start');
+let win;
 
 function motAleatoire(){
 
