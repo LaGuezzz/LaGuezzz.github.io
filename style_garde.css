@@ -31,7 +31,9 @@ img {
     top:0;
     opacity:0;
     transition:0.5s;
-    vertical-align:baseline;
+    display:flex;
+    height:100%;
+    align-items:center;
 }
 
 .conteneur:hover .imgcontenu {
