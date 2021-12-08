@@ -88,13 +88,12 @@ function DisplayTable()
 }
 function LoadPlayersRanking()
 {
-    let players=JSON.parse(localStorage.getItem("players")||[]);
+    let players=JSON.parse(localStorage.getItem("players")||"[]");
     DisplayTable(players);
 }
 
 function ModifyPlayersRanking()
 {
-    let players=JSON.parse(localStorage.getItem("players")||[]);
     if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
          {
             Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
