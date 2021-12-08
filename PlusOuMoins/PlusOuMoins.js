@@ -1,10 +1,3 @@
-
-let objectarray=new Array();
-let currentobject;
-let count=0;
-let playerarray = new Array();
-let gameinprogress=false;
-
 function addobject(name, price, source) {
     this.name = name;
     this.price = price;
@@ -12,22 +5,11 @@ function addobject(name, price, source) {
     this.img.src=source;
 }
 
-
-
 function addtoarray(name,price,source,array){
     let object=new addobject(name,price,source);
     array.push(object);
 
 }
-
-
-addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
-addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
-addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
-addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
-
-
-
 
 function InputImage()
 {
@@ -87,24 +69,76 @@ function AddPlayerRow(Player)
 function DisplayTable()
 {
     document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='3'>TOP10</th></tr><th>Pseudo</th><th>Parties jouées</th><th>Nombre de coups moyens</th></thead>";
-    playerarray.sort((Player1,Player2)=>Player1.AverageStrokes-Player2.AverageStrokes);
-    if (playerarray.length>10)
+    players.sort((Player1,Player2)=>Player1.AverageStrokes-Player2.AverageStrokes);
+    if (players.length>10)
     {
         for(let i=0;i<10;i++)
         {
-            AddPlayerRow(playerarray[i]);
+            AddPlayerRow(players[i]);
         }
     }
     else
     {
-        for(let i=0;i<playerarray.length;i++)
+        for(let i=0;i<players.length;i++)
         {
-            AddPlayerRow(playerarray[i]);
+            AddPlayerRow(players[i]);
         }
 
     }
 }
+function LoadPlayersRanking()
+{
+    let players=JSON.parse(localStorage.getItem("players")||[]);
+    DisplayTable(players);
+}
 
+function ModifyPlayersRanking()
+{
+    let players=JSON.parse(localStorage.getItem("players")||[]);
+    if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
+         {
+            Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
+            console.log(Player);
+            players[Player].Strokes+=count;
+            players[Player].Played+=1
+            players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
+            DisplayTable(players);
+        }
+        else
+        {
+            let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
+            players.push(Player);
+            DisplayTable(players);
+        }
+    document.getElementById('ObjectImage').innerHTML="";
+    count=0;
+    gameinprogress=false;
+    localStorage.setItem("players", JSON.stringify(players));
+}
+
+function ModifyPlayersRanking()
+{
+    players=JSON.parse(localStorage.getItem("players")||[]);
+    if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
+            {
+                Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
+                console.log(Player);
+                players[Player].Strokes+=count;
+                players[Player].Played+=1
+                players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
+                DisplayTable(players);
+            }
+            else
+            {
+                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
+                players.push(Player);
+                DisplayTable(players);
+            }
+    document.getElementById('ObjectImage').innerHTML="";
+    count=0;
+    gameinprogress=false;
+    localStorage.setItem("players", JSON.stringify(players));
+}
 
 function compareprice()
 {
@@ -114,24 +148,7 @@ function compareprice()
         {
             count++;
             div.innerText= "YOU WIN! en "+count+" coups";
-            if (playerarray.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
-            {
-                Player=playerarray.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
-                console.log(Player);
-                playerarray[Player].Strokes+=count;
-                playerarray[Player].Played+=1
-                playerarray[Player].AverageStrokes=playerarray[Player].Strokes/playerarray[Player].Played
-                DisplayTable(playerarray);
-            }
-            else
-            {
-                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
-                playerarray.push(Player);
-                DisplayTable(playerarray);
-            }
-                document.getElementById('ObjectImage').innerHTML="";
-                count=0;
-                gameinprogress=false;
+            ModifyPlayersRanking();
 
         }
 
@@ -153,3 +170,44 @@ function compareprice()
 
         }
 }
+
+function LoadPlayersRanking()
+{
+    players=JSON.parse(localStorage.getItem("players")||[]);
+    DisplayTable(players);
+}
+
+function ModifyPlayersRanking()
+{
+    players=JSON.parse(localStorage.getItem("players")||[]);
+    if (players.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
+            {
+                Player=players.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
+                console.log(Player);
+                players[Player].Strokes+=count;
+                players[Player].Played+=1
+                players[Player].AverageStrokes=players[Player].Strokes/players[Player].Played
+                DisplayTable(players);
+            }
+            else
+            {
+                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
+                players.push(Player);
+                DisplayTable(players);
+            }
+    document.getElementById('ObjectImage').innerHTML="";
+    count=0;
+    gameinprogress=false;
+    localStorage.setItem("players", JSON.stringify(players));
+}
+
+let objectarray=new Array();
+let currentobject;
+let count=0;
+let players = new Array();
+let gameinprogress=false;
+LoadPlayersRanking();
+addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
+addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
+addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
+addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
