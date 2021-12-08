@@ -31,7 +31,7 @@ addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
 
 function InputImage()
 {
-    console.log(document.getElementByID('PseudoInput').value);
+    console.log(document.getElementById('PseudoInput').value);
     if (document.getElementById('PseudoInput').value=="")
     {
         alert("Veuillez indiquer votre pseudo ;-)");
