@@ -65,6 +65,4 @@ function EndGame(win) {
     ActuAffScore();
     butt.disabled = false;
     recolor();
-    
-
 }
