@@ -172,7 +172,5 @@ function LoadPlayersRanking()
     DisplayTable(players);
 }
 
-
-
 LoadPlayersRanking();
 
