@@ -31,23 +31,29 @@ addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
 
 function InputImage()
 {
-    document.getElementById('Result').innerText="";
-    if (!gameinprogress)
+    if (document.getElementById('PseudoInput')=="")
     {
-        let div=document.getElementById('ObjectImage');
-        let random=Math.floor(Math.random()*objectarray.length);
-        let img=new Image();
-        img.onload=function()
-        {
-            div.innerHTML += '<img src="'+img.src+'"style="width:35%;" />';  
-       
-        };
-        div.innerText += objectarray[random].name;
-        img.src=objectarray[random].img.src;
-        currentobject=objectarray[random];
-        gameinprogress=true;
+        alert("Veuillez indiquer votre pseudo ;-)")
     }
-
+    else
+    {
+        document.getElementById('Result').innerText="";
+        if (!gameinprogress)
+        {
+            let div=document.getElementById('ObjectImage');
+            let random=Math.floor(Math.random()*objectarray.length);
+            let img=new Image();
+            img.onload=function()
+            {
+                div.innerHTML += '<img src="'+img.src+'"style="width:35%;" />';  
+       
+            };
+            div.innerText += objectarray[random].name;
+            img.src=objectarray[random].img.src;
+            currentobject=objectarray[random];
+            gameinprogress=true;
+        }
+    }
 }
 
 class AddPlayer {
