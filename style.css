@@ -46,3 +46,16 @@ h1 {
 #nim a:hover, #shifumi a:hover, #pendu a:hover, #juste_prix a:hover, #accueil a:hover {
     color: pink;
 }
+
+button {
+    color: black;
+    background-color : white;
+    padding : 5px 10px;
+    border-radius : 5px;
+    border : 0;
+    font-size: 14px;
+}
+
+button:hover {
+    color:grey;
+}
