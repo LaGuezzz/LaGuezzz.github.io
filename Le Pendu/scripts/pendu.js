@@ -45,20 +45,25 @@ class Pendu {
         if (this.status === 'playing'){
             return `Tentatives restantes: ${this.tentativesRestantes}`
         } else if (this.status === 'failed') {
-            
             return `Dommage! le mot était "${this.mot.join('')}" `
         } else {
-            
+            win = 1;
+            EndGame(win);
             return "Bien joué! vous avez trouvé le mot!"
         }
     }
 
     etat(){
+        let win;
         let finished = this.mot.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
         
         if (this.tentativesRestantes === 0){
             this.status = 'failed'
+            win = 0;
+            EndGame(win);
         } else if (finished){
+            win = 1;
+            EndGame(win);
             this.status = 'finished'
         } else {
             this.status = 'playing'

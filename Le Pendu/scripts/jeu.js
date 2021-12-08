@@ -4,9 +4,9 @@ let restantDIV = document.querySelector('#tentatives');
 
 function motAleatoire(){
 
+    let dictionnaire = ['lapin','poulet','marmotte','chamois','rat','chat','faucon','cheval','salamandre'];
     let random = Math.floor(Math.random()*9);
 
-    let dictionnaire = ['lapin','poulet','marmotte','chamois','rat','chat','faucon','cheval','salamandre'];
     return(dictionnaire[random]);
 }
 
@@ -46,12 +46,24 @@ let startGame = () => {
         joueur = new Player(document.getElementById("pseudo").value, 0, 0);
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
-        } 
+        }
+        //document.getElementById("start").disabled = true;
+        let img = document.createElement("img");
+        img.src = "./images/base.png";
+        document.getElementById('image').replaceChildren(img) 
         let newMot =  motAleatoire();
         game1 = new Pendu(newMot, 5);
         render();
     }
 }
 
+function EndGame(win) {
+    ActuTabScore(win);
+    document.getElementById("tblPlayers").innerHTML = "";
+    ActuAffScore();
+    //document.querySelector('#start').disabled = false;
+    
+
+}
 
 document.querySelector('#start').addEventListener('click',startGame,recolor);
