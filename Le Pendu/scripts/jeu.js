@@ -1,6 +1,7 @@
 let game1;
 let motDIV = document.querySelector('#mot');
 let restantDIV = document.querySelector('#tentatives');
+let butt=document.querySelector('#start');
 
 function motAleatoire(){
 
@@ -47,7 +48,7 @@ let startGame = () => {
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
         }
-        document.getElementById("start").disabled = true;
+        butt.disabled = true;
         let img = document.createElement("img");
         img.src = "./images/base.png";
         document.getElementById('image').replaceChildren(img) 
@@ -61,7 +62,7 @@ function EndGame(win) {
     ActuTabScore(win);
     document.getElementById("tblPlayers").innerHTML = "";
     ActuAffScore();
-    document.querySelector('#start').disabled = false;
+    butt.disabled = false;
     
 
 }
