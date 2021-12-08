@@ -31,7 +31,7 @@ function InputImage()
     }
     else
     {
-        document.getElementbyId("price").style.display = "block";
+        document.getElementById("price").style.display = "block";
         document.getElementById('Result').innerText="";
         if (!gameinprogress)
         {
@@ -142,7 +142,7 @@ function compareprice()
         {
             count++;
             div.innerText= "YOU WIN! en "+count+" coups";
-            document.getElementbyId("price").style.display = "none";
+            document.getElementById("price").style.display = "none";
             ModifyPlayersRanking();
 
         }
