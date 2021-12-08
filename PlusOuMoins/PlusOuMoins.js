@@ -101,11 +101,6 @@ function DisplayTable()
 
 function compareprice()
 {
-    if (document.getElementById('PseudoInput')=="")
-    {
-        alert("Veuillez indiquer votre pseudo ;-)")
-    }
-    else{
         let div=document.getElementById('Result');
 
         if (currentobject.price==document.getElementById("PriceInput").value)
@@ -137,8 +132,6 @@ function compareprice()
         {
             count++;
             div.innerText= "C'est moins! "+count+" coups";
-        
-
         }
         else if(currentobject.price>document.getElementById("PriceInput").value)
         {
@@ -152,5 +145,4 @@ function compareprice()
             div.innerText= "Entrez une valeure correcte SVP!";
 
         }
-    }
 }
