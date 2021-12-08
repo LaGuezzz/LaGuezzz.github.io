@@ -101,50 +101,56 @@ function DisplayTable()
 
 function compareprice()
 {
-    let div=document.getElementById('Result');
-
-    if (currentobject.price==document.getElementById("PriceInput").value)
+    if (document.getElementById('PseudoInput')=="")
     {
-        count++;
-        div.innerText= "YOU WIN! en "+count+" coups";
-        if (playerarray.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
+        alert("Veuillez indiquer votre pseudo ;-)")
+    }
+    else{
+        let div=document.getElementById('Result');
+
+        if (currentobject.price==document.getElementById("PriceInput").value)
         {
-            Player=playerarray.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
-            console.log(Player);
-            playerarray[Player].Strokes+=count;
-            playerarray[Player].Played+=1
-            playerarray[Player].AverageStrokes=playerarray[Player].Strokes/playerarray[Player].Played
-            DisplayTable(playerarray);
+            count++;
+            div.innerText= "YOU WIN! en "+count+" coups";
+            if (playerarray.find((Player) =>Player.Pseudo===document.getElementById("PseudoInput").value))
+            {
+                Player=playerarray.findIndex((Player)=>Player.Pseudo===document.getElementById("PseudoInput").value);
+                console.log(Player);
+                playerarray[Player].Strokes+=count;
+                playerarray[Player].Played+=1
+                playerarray[Player].AverageStrokes=playerarray[Player].Strokes/playerarray[Player].Played
+                DisplayTable(playerarray);
+            }
+            else
+            {
+                let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
+                playerarray.push(Player);
+                DisplayTable(playerarray);
+            }
+                document.getElementById('ObjectImage').innerHTML="";
+                count=0;
+                gameinprogress=false;
+
+        }
+
+        else if(currentobject.price<document.getElementById("PriceInput").value)
+        {
+            count++;
+            div.innerText= "C'est moins! "+count+" coups";
+        
+
+        }
+        else if(currentobject.price>document.getElementById("PriceInput").value)
+        {
+            count++;
+            div.innerText= "C'est plus! "+count+" coups";
+        
+
         }
         else
         {
-            let Player=new AddPlayer(document.getElementById("PseudoInput").value,1,count);
-            playerarray.push(Player);
-            DisplayTable(playerarray);
+            div.innerText= "Entrez une valeure correcte SVP!";
+
         }
-        document.getElementById('ObjectImage').innerHTML="";
-        count=0;
-        gameinprogress=false;
-
-    }
-
-    else if(currentobject.price<document.getElementById("PriceInput").value)
-    {
-        count++;
-        div.innerText= "C'est moins! "+count+" coups";
-        
-
-    }
-    else if(currentobject.price>document.getElementById("PriceInput").value)
-    {
-        count++;
-        div.innerText= "C'est plus! "+count+" coups";
-        
-
-    }
-    else
-    {
-        div.innerText= "Entrez une valeure correcte SVP!";
-
     }
 }
