@@ -38,7 +38,7 @@ img {
 }
 
 .conteneur:hover .imgcontenu {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .conteneur:hover .txtcontenu {
