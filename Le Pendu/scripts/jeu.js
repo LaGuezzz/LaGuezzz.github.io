@@ -64,6 +64,7 @@ function EndGame(win) {
     document.getElementById("tblPlayers").innerHTML = "";
     ActuAffScore();
     butt.disabled = false;
+    recolor();
     
 
 }
