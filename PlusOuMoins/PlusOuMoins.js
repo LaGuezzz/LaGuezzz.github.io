@@ -27,6 +27,7 @@ addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
 addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
 addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
 addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
+addtoarray("Babouche-Aladin",139,"Objects/babouche-aladin.jpg",objectarray);
 
 function InputImage()
 {
