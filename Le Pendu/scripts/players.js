@@ -1,4 +1,4 @@
-let players = new Array;
+let players =JSON.parse(localStorage.getItem("playersPendu")||"[]");
 let joueur;
 
 class Player {
@@ -51,4 +51,7 @@ function ActuTabScore(win) {
             return b.Played - a.Played;
         }
     });
+    localStorage.setItem("playersPendu",JSON.stringify(players));
 }
+
+ActuAffScore();

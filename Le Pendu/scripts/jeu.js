@@ -48,6 +48,7 @@ let startGame = () => {
         joueur = new Player(document.getElementById("pseudo").value, 0, 0);
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
+            localStorage.setItem("playersPendu",JSON.stringify(players));
         }
         butt.disabled = true;
         let img = document.createElement("img");
@@ -66,3 +67,4 @@ function EndGame(win) {
     butt.disabled = false;
     recolor();
 }
+

@@ -1,3 +1,4 @@
+
 class Pendu {
     constructor(mot, tentativesRestantes){
         this.mot = mot.toLowerCase().split('');
