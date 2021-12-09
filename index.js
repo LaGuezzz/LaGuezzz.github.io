@@ -1,8 +1,5 @@
 playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
 playersPlusOuMoins=JSON.parse(localStorage.getItem("playersPlusOuMoins")||"[]");
-
-console.log(playersPlusOuMoins);
-
 playersTotal=JSON.parse(localStorage.getItem("playersTotal")||"[]");
 
 console.log(playersTotal);
