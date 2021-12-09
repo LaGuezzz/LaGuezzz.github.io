@@ -1,5 +1,3 @@
-
-
 playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
 playersPlusOuMoins=JSON.parse(localStorage.getItem("playersPlusOuMoins")||"[]");
 
