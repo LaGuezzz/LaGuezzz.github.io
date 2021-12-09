@@ -4,6 +4,12 @@ let count=0;
 let players = new Array();
 let gameinprogress=false;
 
+var js = document.createElement("script");
+js.type = "text/javascript";
+js.src = "./confetti_appel.js" ;
+
+
+
 function addobject(name, price, source) {
     this.name = name;
     this.price = price;
@@ -141,9 +147,20 @@ function compareprice()
         if (currentobject.price==document.getElementById("PriceInput").value)
         {
             count++;
-            div.innerText= "YOU WIN! en "+count+" coups";
+            div.innerHTML= "<span style='color: red; font-size:300%; font-weight:bold;'>YOU WIN!</span>";
             document.getElementById("price").style.display = "none";
+            let clignotement = function(){ 
+                if (div.style.visibility=='visible'){ 
+                   div.style.visibility='hidden'; 
+                } 
+                else{ 
+                div.style.visibility='visible'; 
+                } 
+            };
+            document.getElementById('Result').appendChild(js);
+            periode = setInterval(clignotement, 600); 
             ModifyPlayersRanking();
+            document.getElementById('Result').removeChild(js);
 
         }
 

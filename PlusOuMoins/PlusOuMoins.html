@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="css_plus_moins.css">
     <script type="text/javascript" src="PlusOuMoins.js" defer></script>
+    <script type="text/javascript" src="confetti.js" defer></script>
+
     <title>Le Juste Prix</title>
 </head>
 
@@ -23,36 +25,36 @@
 </header>
 <br>
 <body>
-    <div id="jeu">
-        <div>
+        <div id="jeu">
             <div>
-                <input type="text" id="PseudoInput" placeholder="Pseudo">
+                <div>
+                    <input type="text" id="PseudoInput" placeholder="Pseudo">
+                </div>
+                <br>
+                <button type="button" id="ObjectInput" onclick="InputImage()">Générer un objet aléatoire</button>
+                <br>
+                <div id="ObjectImage">
+                </div>
+                <div id="price" style="display:none;">
+                    Entrez un prix:<input type="number" id="PriceInput" />
+                    <button type="button" id="Validate" onclick="compareprice()">Valider!</button>
+                </div>
+                <br>
+                <br>
+                <div id="Result" style="visibility:visible;">
+                </div>
             </div>
-            <br>
-            <button type="button" id="ObjectInput" onclick="InputImage()">Générer un objet aléatoire</button>
-            <br>
-            <div id="ObjectImage">
-            </div>
-            <div id="price" style="display:none;">
-                Entrez un prix:<input type="number" id="PriceInput" />
-                <button type="button" id="Validate" onclick="compareprice()">Valider!</button>
-            </div>
-            <div id="Result">
-
-            </div>
-        </div>
-        <div>
-            <table border="1" id="tblPlayers">
-                <thead>
-                    <tr>
-                        <th colspan="3">
-                            <span id="top"> TOP 10 </span>
-                        </th>
-                    </tr>
-                    <th>Pseudo</th>
-                    <th>Parties jouées</th>
-                    <th>Nombre de coups moyens</th>
-                    
+            <div>
+                <table border="1" id="tblPlayers">
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+                                <span id="top"> TOP 10 </span>
+                            </th>
+                        </tr>
+                        <th>Pseudo</th>
+                        <th>Parties jouées</th>
+                        <th>Nombre de coups moyens</th>
                 </thead>
                 <tbody>
                     
