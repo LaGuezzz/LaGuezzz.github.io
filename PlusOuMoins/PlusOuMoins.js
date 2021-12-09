@@ -159,8 +159,9 @@ function compareprice()
                 div.style.visibility='visible'; 
                 } 
             };
+            let vitesse=600;
             document.getElementById('Result').appendChild(js);
-            periode = setInterval(clignotement, 600); 
+            periode = setInterval(clignotement, vitesse); 
             ModifyPlayersRanking();
             document.getElementById('Result').removeChild(js);
 
