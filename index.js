@@ -47,7 +47,7 @@ function AddPlusOuMoins()
 
 function AddNim()
 {
-    for (i=0;i<playersNim;i++)
+    for (i=0;i<playersNim.length;i++)
     {
         if (playersTotal.find((Player) =>Player.Pseudo==playersNim[i].Pseudo))
         {
