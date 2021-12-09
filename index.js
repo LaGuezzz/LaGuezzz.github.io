@@ -31,9 +31,9 @@ function AddPlusOuMoins()
 {
     for (i=0;i<playersPlusOuMoins.length;i++)
     {
-        if (playersTotal.find((Player) =>Player.Pseudo===playersPlusOuMoins[i].Pseudo))
+        if (playersTotal.find((Player) =>Player.Pseudo==playersPlusOuMoins[i].Pseudo))
         {
-            Player=playersTotal.findIndex((Player)=>Player.Pseudo===playersPlusOuMoins[i].Pseudo);
+            Player=playersTotal.findIndex((Player)=>Player.Pseudo==playersPlusOuMoins[i].Pseudo);
             playersTotal[Player].PlayedPlusOuMoins=playersPlusOuMoins[i].Played;
             playersTotal[Player].ScorePlusOuMoins=playersPlusOuMoins[i].AverageStrokes;
         }
@@ -49,9 +49,9 @@ function AddNim()
 {
     for (i=0;i<playersNim;i++)
     {
-        if (playersTotal.find((Player) =>Player.Pseudo===playersNim[i].Pseudo))
+        if (playersTotal.find((Player) =>Player.Pseudo==playersNim[i].Pseudo))
         {
-            Player=playersTotal.findIndex((Player)=>Player.Pseudo===playersNim[i].Pseudo);
+            Player=playersTotal.findIndex((Player)=>Player.Pseudo==playersNim[i].Pseudo);
             playersTotal[Player].PlayedNim=playersNim[i].Played;
             playersTotal[Player].PercentageNim=playersNim[i].Percentage;
             playersTotal[Player].WinNim=playersNim[i].Win;
@@ -84,10 +84,12 @@ function AddPlayerRow(Player)
     WinPendu.innerText = Player.WinPendu;
     const PlayedPendu = document.createElement("TD");
     PlayedPendu.innerText = Player.PlayedPendu;
+    const PercentagePendu = document.createElement("TD");
+    PercentagePendu.innerText = Player.PercentagePendu;
     const PlayedPlusOuMoinsCell = document.createElement("TD");
-    PlayedPlusOuMoinsCell.innerText = Player.Played;
-    const AverageStrokesCell = document.createElement("TD");
-    AverageStrokesCell.innerText = Player.AverageStrokes;
+    PlayedPlusOuMoinsCell.innerText = Player.PlayedPlusOuMoins;
+    const ScorePlusOuMoins = document.createElement("TD");
+    ScorePlusOuMoins.innerText = Player.ScorePlusOuMoins;
     const NimWin = document.createElement("TD");
     NimWin.innerText = Player.WinNim;
     const NimPlayed = document.createElement("TD");
@@ -100,11 +102,13 @@ function AddPlayerRow(Player)
     PlayerRow.appendChild(ShifumiCell);
     PlayerRow.appendChild(WinPendu);
     PlayerRow.appendChild(PlayedPendu);
+    PlayerRow.appendChild(PercentagePendu);
     PlayerRow.appendChild(PlayedPlusOuMoinsCell);
-    PlayerRow.appendChild(AverageStrokesCell);
+    PlayerRow.appendChild(ScorePlusOuMoins);
     PlayerRow.appendChild(NimWin);
     PlayerRow.appendChild(NimPlayed);
-    PlayerRow.appendChild(AverageStrokesCell);
+    PlayerRow.appendChild(NimPercentage);
+    PlayerRow.appendChild(Total);
     tablePlayers.appendChild(PlayerRow);
 }
 
