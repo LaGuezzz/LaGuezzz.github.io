@@ -71,7 +71,6 @@ function ModifyPlayersTotal()
 
 }
 
-
 function AddPlayerRow(Player)
 {
     const tablePlayers = document.getElementById("tblPlayers");
