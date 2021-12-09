@@ -114,7 +114,7 @@ function AddPlayerRow(Player)
 
 function DisplayTable()
 {
-    document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='10'><span id='top'> TOP 10 </span></th></tr><tr><th rowspan='2'> Pseudo </th><th> Score <span id='shifumi'> Shifumi</span> </th><th colspan='3'> Score <span id='pendu'> Pendu </span> </th><th colspan='2'> Score <span id='juste_prix'> Juste Prix </span> </th><th colspan='3'> Score <span id='nim'> Jeu de Nim </span></th></tr><tr><th></th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th><th>Parties jouées</th><th>Nombre de coups moyens</th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th></tr></thead><tbody></tbody>";
+    document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='10'><span id='top'> TOP 10 </span></th></tr><tr><th rowspan='2'> Pseudo </th><th> Score <span id='shifumi'> Shifumi</span> </th><th colspan='3'> Score <span id='pendu'> Pendu </span> </th><th colspan='2'> Score <span id='juste_prix'> Juste Prix </span> </th><th colspan='3'> Score <span id='nim'> Jeu de Nim </span></th><th rowspan="2"> SCORE TOTAL </th></tr><tr><th></th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th><th>Parties jouées</th><th>Nombre de coups moyens</th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th></tr></thead><tbody></tbody>";
     console.log(playersTotal);
     playersTotal.sort((Player1,Player2)=>Player2.Total-Player1.Total);
     if (playersTotal.length>10)
