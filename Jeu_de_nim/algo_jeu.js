@@ -3,9 +3,16 @@ let Nb;
 let playersNim = new Array;
 let joueur;
 
+function LoadplayersNimRanking() {
+    playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
+    ActuAffScore();
+}
+
+LoadplayersNimRanking();
+
 function EndGame(win) {
     ActuTabScore(win);
-    document.getElementById("tblPlayers").innerHTML = "";
+    //document.getElementById("tblPlayers").innerHTML = "";
     document.getElementById("allumettes").innerHTML = "";
     ActuAffScore();
     document.getElementById("info_jeu").style.display = "block";
@@ -26,7 +33,7 @@ function ActuTabScore(win) {
             return b.Played - a.Played;
         }
     });
-    //localStorage.setItem("playersNim", JSON.stringify(playersNim));
+    localStorage.setItem("playersNim", JSON.stringify(playersNim));
 }
 
 function ActuAffScore() {
@@ -233,14 +240,6 @@ function AffJeu() {
     }
     document.getElementById("nb_allumettes").innerText = "Il reste 21 allumettes";
 }
-
-/*function LoadplayersNimRanking()
-{
-    playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
-    ActuAffScore();
-}
-
-LoadplayersNimRanking();*/
 
 function Init_Nim() {
     if (document.getElementById("pseudo").value == "") {
