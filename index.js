@@ -1,5 +1,6 @@
 playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
 playersPlusOuMoins=JSON.parse(localStorage.getItem("playersPlusOuMoins")||"[]");
+playersPendu=JSON.parse(localStorage.getItem("playersPendu")||"[]");
 playersTotal=JSON.parse(localStorage.getItem("playersTotal")||"[]");
 
 console.log(playersTotal);
@@ -58,10 +59,29 @@ function AddNim()
     }
 }
 
+function AddPendu()
+{
+    for (i=0;i<playersPendu.length;i++)
+    {
+        if (playersTotal.find((Player) =>Player.Pseudo==playersPendu[i].Pseudo))
+        {
+            Player=playersTotal.findIndex((Player)=>Player.Pseudo==playersPendu[i].Pseudo);
+            playersTotal[Player].WinPendu=playersPendu[i].Win;
+            playersTotal[Player].PercentagePendu=playersPendu[i].Percentage;
+            playersTotal[Player].PlayedPendu=playersPendu[i].Played;
+        }
+        else
+        {
+            playersTotal.push(new AddPlayer(playersPendu[i].Pseudo,0,playersPendu[i].Win,playersPendu[i].Played,playersPendu[i].Percentage,0,0,0,0,0));
+        }
+    }
+}
+
 function ModifyPlayersTotal()
 {
     AddPlusOuMoins();
     AddNim();
+    AddPendu();
     localStorage.setItem("playersTotal", JSON.stringify(playersTotal));
 
 }
@@ -79,7 +99,7 @@ function AddPlayerRow(Player)
     const PlayedPendu = document.createElement("TD");
     PlayedPendu.innerText = Player.PlayedPendu;
     const PercentagePendu = document.createElement("TD");
-    PercentagePendu.innerText = Player.PercentagePendu;
+    PercentagePendu.innerText = Player.PercentagePendu+"%";
     const PlayedPlusOuMoinsCell = document.createElement("TD");
     PlayedPlusOuMoinsCell.innerText = Player.PlayedPlusOuMoins;
     const ScorePlusOuMoins = document.createElement("TD");
@@ -89,7 +109,7 @@ function AddPlayerRow(Player)
     const NimPlayed = document.createElement("TD");
     NimPlayed.innerText = Player.PlayedNim
     const NimPercentage = document.createElement("TD");
-    NimPercentage.innerText = Player.PercentageNim;
+    NimPercentage.innerText = Player.PercentageNim+"%";
     const Total = document.createElement ("TD");
     Total.innerText = Player.Total;
     PlayerRow.appendChild(PseudoCell);
