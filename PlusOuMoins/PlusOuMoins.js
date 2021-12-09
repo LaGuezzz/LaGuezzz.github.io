@@ -1,10 +1,9 @@
 let objectarray=new Array();
 let currentobject;
 let count=0;
-let players = new Array();
 let gameinprogress=false;
 
-var js = document.createElement("script");
+let js = document.createElement("script");
 js.type = "text/javascript";
 js.src = "./confetti_appel.js" ;
 
