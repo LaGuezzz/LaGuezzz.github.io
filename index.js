@@ -6,9 +6,9 @@ playersTotal=JSON.parse(localStorage.getItem("playersTotal")||"[]");
 console.log(playersTotal);
 
 class AddPlayer {
-    constructor(Pseudo,WinPendu,PlayedPendu,PercentagePendu,PlayedPlusOuMoins,ScorePlusOuMoins,PlayedNim,WinNim,PercentageNim) {
+    constructor(Pseudo,ScoreShifumi,WinPendu,PlayedPendu,PercentagePendu,PlayedPlusOuMoins,ScorePlusOuMoins,PlayedNim,WinNim,PercentageNim) {
         this.Pseudo=Pseudo;
-        this.ScoreShifumi=0;
+        this.ScoreShifumi=ScoreShifumi;
         this.WinPendu=WinPendu;
         this.PlayedPendu=PlayedPendu;
         this.PercentagePendu=PercentagePendu; 
