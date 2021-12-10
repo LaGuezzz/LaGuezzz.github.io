@@ -22,7 +22,7 @@ function addtoarray(name,price,source,array){
 
 }
 
-addtoarray("Lamborghini",160000,"Objects/Lamborghini.jpg",objectarray);
+addtoarray("Lamborghini",337865,"Objects/Lamborghini.jpg",objectarray);
 addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarray);
 addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
 addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
