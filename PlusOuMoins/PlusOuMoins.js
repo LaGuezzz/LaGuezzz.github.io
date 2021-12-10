@@ -31,7 +31,7 @@ addtoarray("Collection Intégrale Dora l'Exploratrice",95,"Objects/integral-dora
 addtoarray("Rat de compagnie",17,"Objects/rat-domestique.jpg",objectarray);
 addtoarray("Vinyle Aya Nakamura",16,"Objects/vinyle-nakamura.jpg",objectarray);
 addtoarray("Statue Gorille et Bébé noire",1299,"Objects/statue-gorille.png",objectarray);
-addtoarray("Vase en Ouraline",117,"Objects/vase-ouraline.png",objectarray);
+addtoarray("Vase en Ouraline",117,"Objects/vase-ouraline.jpg",objectarray);
 
 function InputImage()
 {
