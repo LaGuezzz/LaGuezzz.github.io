@@ -108,7 +108,7 @@ function AddPlayerRow(Player)
     const PseudoCell = document.createElement("TD");
     PseudoCell.innerText = Player.Pseudo;
     const ShifumiCell=document.createElement("TD");
-    ShifumiCell.innerText=(Player.ScoreShifumi).toPrecision(3)+%;
+    ShifumiCell.innerText=(Player.ScoreShifumi).toPrecision(3)+"%";
     const WinPendu = document.createElement("TD");
     WinPendu.innerText = Player.WinPendu;
     const PlayedPendu = document.createElement("TD");
