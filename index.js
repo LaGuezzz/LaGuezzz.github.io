@@ -108,13 +108,13 @@ function AddPlayerRow(Player)
     const PseudoCell = document.createElement("TD");
     PseudoCell.innerText = Player.Pseudo;
     const ShifumiCell=document.createElement("TD");
-    ShifumiCell.innerText=Player.ScoreShifumi;
+    ShifumiCell.innerText=(Player.ScoreShifumi).toPrecision(3)+%;
     const WinPendu = document.createElement("TD");
     WinPendu.innerText = Player.WinPendu;
     const PlayedPendu = document.createElement("TD");
     PlayedPendu.innerText = Player.PlayedPendu;
     const PercentagePendu = document.createElement("TD");
-    PercentagePendu.innerText = Player.PercentagePendu+"%";
+    PercentagePendu.innerText = (Player.PercentagePendu)..toPrecision(3)+"%";
     const PlayedPlusOuMoinsCell = document.createElement("TD");
     PlayedPlusOuMoinsCell.innerText = Player.PlayedPlusOuMoins;
     const ScorePlusOuMoins = document.createElement("TD");
@@ -124,9 +124,9 @@ function AddPlayerRow(Player)
     const NimPlayed = document.createElement("TD");
     NimPlayed.innerText = Player.PlayedNim
     const NimPercentage = document.createElement("TD");
-    NimPercentage.innerText = Player.PercentageNim+"%";
+    NimPercentage.innerText = (Player.PercentageNim).toPrecision(3)+"%";
     const Total = document.createElement ("TD");
-    Total.innerText = Player.Total;
+    Total.innerText = (Player.Total).toPrecision(3);
     PlayerRow.appendChild(PseudoCell);
     PlayerRow.appendChild(ShifumiCell);
     PlayerRow.appendChild(WinPendu);
