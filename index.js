@@ -114,7 +114,7 @@ function AddPlayerRow(Player)
     const PlayedPendu = document.createElement("TD");
     PlayedPendu.innerText = Player.PlayedPendu;
     const PercentagePendu = document.createElement("TD");
-    PercentagePendu.innerText = (Player.PercentagePendu)..toPrecision(3)+"%";
+    PercentagePendu.innerText = (Player.PercentagePendu).toPrecision(3)+"%";
     const PlayedPlusOuMoinsCell = document.createElement("TD");
     PlayedPlusOuMoinsCell.innerText = Player.PlayedPlusOuMoins;
     const ScorePlusOuMoins = document.createElement("TD");
