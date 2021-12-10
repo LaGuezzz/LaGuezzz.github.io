@@ -30,6 +30,7 @@ addtoarray("Babouche-Aladin",139,"Objects/babouche-aladin.jpg",objectarray);
 addtoarray("Collection Intégrale Dora l'Exploratrice",95,"Objects/integral-dora.jpg",objectarray);
 addtoarray("Rat de compagnie",17,"Objects/rat-domestique.jpg",objectarray);
 addtoarray("Vinyle Aya Nakamura",16,"Objects/vinyle-nakamura.jpg",objectarray);
+addtoarray("Statue Gorille et Bébé noire",99,"Objects/statue-gorille.png",objectarray);
 
 function InputImage()
 {
