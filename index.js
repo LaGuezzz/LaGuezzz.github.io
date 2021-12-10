@@ -63,7 +63,7 @@ function AddNim()
         }
         else
         {
-            let p=new AddPlayer(playersNim[i].Pseudo,0,0,0,0,0,0,playersNim[i].Played,playersNim[i].Win,playersNim[i].Percentage);
+            let p=new AddPlayer(playersNim[i].Pseudo,0,0,0,0,0,0,playersNim[i].Win,playersNim[i].Played,playersNim[i].Percentage);
             p.Total=CalcTotal(p.ScoreShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
             playersTotal.push(p);
         }
