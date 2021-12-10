@@ -17,7 +17,7 @@ class AddPlayer {
         this.PlayedNim=PlayedNim;
         this.WinNim=WinNim;
         this.PercentageNim=PercentageNim;
-        this.Total=1/4*this.ScoreShifumi+1/4*this.PercentagePendu+1/4*(100-this.ScorePlusOuMoins)+1/4*this.PercentageNim;
+        this.Total=(1/4*this.ScoreShifumi)+(1/4*this.PercentagePendu)+(1/4*(100-this.ScorePlusOuMoins))+(1/4*this.PercentageNim);
 
     }
 }
