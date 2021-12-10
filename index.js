@@ -17,9 +17,15 @@ class AddPlayer {
         this.PlayedNim=PlayedNim;
         this.WinNim=WinNim;
         this.PercentageNim=PercentageNim;
-        this.Total=(1/4 * this.ScoreShifumi) + (1/4 * this.PercentagePendu) + (1/4 *(100 - this.ScorePlusOuMoins)) + (1/4 * this.PercentageNim);
+        this.Total;
 
     }
+}
+
+function CalcTotal(Shifumi,Pendu,PlusOuMoins,Nim)
+{
+    score=(0.25*Shifumi) + (0.25*Pendu) + (0.25*(100-PlusOuMoins)) + (0.25*Nim);
+    return score;
 }
 
 
@@ -32,10 +38,12 @@ function AddPlusOuMoins()
             Player=playersTotal.findIndex((Player)=>Player.Pseudo==playersPlusOuMoins[i].Pseudo);
             playersTotal[Player].PlayedPlusOuMoins=playersPlusOuMoins[i].Played;
             playersTotal[Player].ScorePlusOuMoins=playersPlusOuMoins[i].AverageStrokes;
+            playersTotal[Player].Total=CalcTotal(playersTotal[Player].ScoreShifumi,playersTotal[Player].PercentagePendu,playersTotal[Player].ScorePlusOuMoins,playersTotal[Player].PercentageNim);
         }
         else
         {
             let p=new AddPlayer(playersPlusOuMoins[i].Pseudo,0,0,0,0,playersPlusOuMoins[i].Played,playersPlusOuMoins[i].AverageStrokes,0,0,0);
+            p.Total=CalcTotal(p.ScoreShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
             playersTotal.push(p);
         }    
     }
@@ -51,10 +59,14 @@ function AddNim()
             playersTotal[Player].PlayedNim=playersNim[i].Played;
             playersTotal[Player].PercentageNim=playersNim[i].Percentage;
             playersTotal[Player].WinNim=playersNim[i].Win;
+            playersTotal[Player].Total=CalcTotal(playersTotal[Player].ScoreShifumi,playersTotal[Player].PercentagePendu,playersTotal[Player].ScorePlusOuMoins,playersTotal[Player].PercentageNim);
+
         }
         else
         {
-            playersTotal.push(new AddPlayer(playersNim[i].Pseudo,0,0,0,0,0,0,playersNim[i].Played,playersNim[i].Win,playersNim[i].Percentage));
+            let p=new AddPlayer(playersNim[i].Pseudo,0,0,0,0,0,0,playersNim[i].Played,playersNim[i].Win,playersNim[i].Percentage));
+            p.Total=CalcTotal(p.ScoreShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
+            playersTotal.push(p);
         }
     }
 }
@@ -69,10 +81,14 @@ function AddPendu()
             playersTotal[Player].WinPendu=playersPendu[i].Win;
             playersTotal[Player].PercentagePendu=playersPendu[i].Percentage;
             playersTotal[Player].PlayedPendu=playersPendu[i].Played;
+            playersTotal[Player].Total=CalcTotal(playersTotal[Player].ScoreShifumi,playersTotal[Player].PercentagePendu,playersTotal[Player].ScorePlusOuMoins,playersTotal[Player].PercentageNim);
+
         }
         else
         {
-            playersTotal.push(new AddPlayer(playersPendu[i].Pseudo,0,playersPendu[i].Win,playersPendu[i].Played,playersPendu[i].Percentage,0,0,0,0,0));
+            let p =new AddPlayer(playersPendu[i].Pseudo,0,playersPendu[i].Win,playersPendu[i].Played,playersPendu[i].Percentage,0,0,0,0,0));
+            p.Total=CalcTotal(p.ScoreShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
+            playersTotal.push(p);
         }
     }
 }
