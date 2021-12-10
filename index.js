@@ -35,7 +35,7 @@ function AddPlusOuMoins()
         }
         else
         {
-            let p=new AddPlayer(playersPlusOuMoins[i].Pseudo,playersPlusOuMoins[i].Played,playersPlusOuMoins[i].AverageStrokes,0,0,0);
+            let p=new AddPlayer(playersPlusOuMoins[i].Pseudo,0,0,0,0,playersPlusOuMoins[i].Played,playersPlusOuMoins[i].AverageStrokes,0,0,0);
             playersTotal.push(p);
         }    
     }
@@ -54,7 +54,7 @@ function AddNim()
         }
         else
         {
-            playersTotal.push(new AddPlayer(playersNim[i].Pseudo,0,0,playersNim[i].Played,playersNim[i].Win,playersNim[i].Percentage));
+            playersTotal.push(new AddPlayer(playersNim[i].Pseudo,0,0,0,0,0,0,playersNim[i].Played,playersNim[i].Win,playersNim[i].Percentage));
         }
     }
 }
