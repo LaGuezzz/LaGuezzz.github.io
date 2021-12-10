@@ -85,7 +85,7 @@ function AddPendu()
         }
         else
         {
-            let p =new AddPlayer(playersPendu[i].Pseudo,0,playersPendu[i].Win,playersPendu[i].Played,playersPendu[i].Percentage,0,0,0,0,0));
+            let p =new AddPlayer(playersPendu[i].Pseudo,0,playersPendu[i].Win,playersPendu[i].Played,playersPendu[i].Percentage,0,0,0,0,0);
             p.Total=CalcTotal(p.ScoreShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
             playersTotal.push(p);
         }
