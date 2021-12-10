@@ -20,19 +20,19 @@
     </div>
 </header>
 
-<body>
+<body style="display: grid; grid-template-columns: repeat(2, 1fr);">
     <div>
-        <input type="text" id="pseudo" placeholder="Pseudo">
-    </div>
-    <div class="">
-        <p>Commencez en tappant les lettres au clavier</p>
-        <div id="mot" class="mot"></div>
-        <p id="tentatives"></p>
-        <button id="start" class="button" onclick="startGame()" onclick="recolor()">Start</button>
-    </div>
-    <div id="conteneur">
-        <div class="centre" id="le_clavier">
-            <div style="display: grid; grid-template-rows: repeat(13, 1fr);">
+        <div>
+            <input type="text" id="pseudo" placeholder="Pseudo">
+        </div>
+        <div class="">
+            <p>Commencez en tappant les lettres au clavier</p>
+            <div id="mot" class="mot"></div>
+            <p id="tentatives"></p>
+            <button id="start" class="button" onclick="startGame()" onclick="recolor()">Start</button>
+        </div>
+        <div id="conteneur">
+            <div class="centre" id="le_clavier" style="display: grid; grid-template-rows: repeat(2, 1fr);">
                 <div>
                     <div class="lettre" id="a">A</div>
                     <div class="lettre" id="b">B</div>
@@ -87,9 +87,9 @@
         </div>
         <div id="image" src="./images/base.png"></div>
     </div>
-    <script src="./scripts/pendu.js"defer></script>
-    <script src="./scripts/jeu.js"defer></script>
-    <script src="./scripts/players.js"defer></script>
+    <script src="./scripts/pendu.js" defer></script>
+    <script src="./scripts/jeu.js" defer></script>
+    <script src="./scripts/players.js" defer></script>
 </body>
 <footer>
     <div id="footer">
