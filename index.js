@@ -18,7 +18,6 @@ class AddPlayer {
         this.WinNim=WinNim;
         this.PercentageNim=PercentageNim;
         this.Total;
-
     }
 }
 
