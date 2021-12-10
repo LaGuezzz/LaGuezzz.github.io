@@ -23,7 +23,7 @@ class AddPlayer {
 
 function CalcTotal(Shifumi,Pendu,PlusOuMoins,Nim)
 {
-    score=(0.25*Shifumi) + (0.25*Pendu) + (0.25*(100-PlusOuMoins)) + (0.25*Nim);
+    score=(0.25*Shifumi) + (0.25*Pendu) + (0.25*(101-PlusOuMoins)) + (0.25*Nim);
     return score;
 }
 
