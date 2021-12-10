@@ -27,7 +27,8 @@ addtoarray("Dragon Blanc Aux Yeux Bleus",25,"Objects/DragonBlanc.png",objectarra
 addtoarray("Sèche-linge",499,"Objects/seche-linge.png",objectarray);
 addtoarray("Volant-Léopard",15,"Objects/volant-leopard.jpg",objectarray);
 addtoarray("Babouche-Aladin",139,"Objects/babouche-aladin.jpg",objectarray);
-addtoarray("Collection Intégrale Dora l'Exploratrice",99,"Objects/integral-dora.jpg",objectarray);
+addtoarray("Collection Intégrale Dora l'Exploratrice",95,"Objects/integral-dora.jpg",objectarray);
+addtoarray("Rat de compagnie",17,"Objects/rat-domestique.jpg",objectarray);
 
 function InputImage()
 {
