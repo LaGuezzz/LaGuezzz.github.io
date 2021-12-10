@@ -43,7 +43,7 @@ function InputImage()
     else
     {
         document.getElementById("price").style.display = "block";
-        document.getElementById('Result').innerText="";
+        document.getElementById('Result').innerHTML="";
         if (!gameinprogress)
         {
             let div=document.getElementById('ObjectImage');
