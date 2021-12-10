@@ -6,18 +6,18 @@ playersTotal=JSON.parse(localStorage.getItem("playersTotal")||"[]");
 console.log(playersTotal);
 
 class AddPlayer {
-    constructor(Pseudo, PlayedPlusOuMoins,ScorePlusOuMoins,PlayedNim,WinNim,PercentageNim) {
+    constructor(Pseudo,WinPendu,PlayedPendu,PercentagePendu,PlayedPlusOuMoins,ScorePlusOuMoins,PlayedNim,WinNim,PercentageNim) {
         this.Pseudo=Pseudo;
         this.ScoreShifumi=0;
-        this.WinPendu=0;
-        this.PlayedPendu=0;
-        this.PercentagePendu=0; 
+        this.WinPendu=WinPendu;
+        this.PlayedPendu=PlayedPendu;
+        this.PercentagePendu=PercentagePendu; 
         this.PlayedPlusOuMoins=PlayedPlusOuMoins;
         this.ScorePlusOuMoins=ScorePlusOuMoins;
         this.PlayedNim=PlayedNim;
         this.WinNim=WinNim;
         this.PercentageNim=PercentageNim;
-        this.Total=0;
+        this.Total=1/4*this.ScoreShifumi+1/4*this.PercentagePendu+1/4*(100-this.ScorePlusOuMoins)+1/4*this.PercentageNim;
 
     }
 }
