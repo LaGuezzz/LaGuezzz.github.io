@@ -81,7 +81,7 @@ function AddPlayerRow(Player)
     const PlayedCell = document.createElement("TD");
     PlayedCell.innerText = Player.Played;
     const AverageStrokesCell = document.createElement("TD");
-    AverageStrokesCell.innerText = Player.AverageStrokes;
+    AverageStrokesCell.innerText = (Player.AverageStrokes).toPrecision(3);
     PlayerRow.appendChild(PseudoCell);
     PlayerRow.appendChild(PlayedCell);
     PlayerRow.appendChild(AverageStrokesCell);
