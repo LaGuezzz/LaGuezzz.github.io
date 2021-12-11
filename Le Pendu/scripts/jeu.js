@@ -56,6 +56,7 @@ let startGame = () => {
         document.getElementById('image').replaceChildren(img) 
         let newMot =  motAleatoire();
         game1 = new Pendu(newMot, 5);
+        recolor();
         render();
     }
 }
