@@ -4,28 +4,6 @@ let count=0;
 let gameinprogress=false;
 let periode=0;
 
-
- function loadConfetti()
-{
-    const start = () => {
-        setTimeout(function() {
-            confetti.start()
-        }, 500); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
-    };
-    
-    //  for stopping the confetti 
-    
-    const stop = () => {
-        setTimeout(function() {
-            confetti.stop()
-        }, 10000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
-    };
-    // after this here we are calling both the function so it works
-    start();
-    stop();
-
-}
-
 function addobject(name, price, source) {
     this.name = name;
     this.price = price;
@@ -156,6 +134,27 @@ function ModifyPlayersRanking()
     count=0;
     gameinprogress=false;
     localStorage.setItem("playersPlusOuMoins", JSON.stringify(players));
+}
+
+function loadConfetti()
+{
+    const start = () => {
+        setTimeout(function() {
+            confetti.start()
+        }, 500); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    };
+    
+    //  for stopping the confetti 
+    
+    const stop = () => {
+        setTimeout(function() {
+            confetti.stop()
+        }, 10000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    };
+    // after this here we are calling both the function so it works
+    start();
+    stop();
+
 }
 
 
