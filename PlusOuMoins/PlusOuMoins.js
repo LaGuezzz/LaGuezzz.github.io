@@ -2,6 +2,7 @@ let objectarray=new Array();
 let currentobject;
 let count=0;
 let gameinprogress=false;
+let periode=0;
 
 let js = document.createElement("script");
 js.type = "text/javascript";
@@ -36,6 +37,7 @@ addtoarray("Vase en Ouraline",117,"Objects/vase-ouraline.jpg",objectarray);
 function InputImage()
 {
     console.log(document.getElementById("PseudoInput").value);
+    clearIntervale(periode);
     if (document.getElementById("PseudoInput").value=="")
     {
         alert("Veuillez indiquer votre pseudo ;-)");
