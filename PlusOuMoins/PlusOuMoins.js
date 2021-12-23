@@ -4,11 +4,27 @@ let count=0;
 let gameinprogress=false;
 let periode=0;
 
-let js = document.createElement("script");
-js.type = "text/javascript";
-js.src = "./confetti_appel.js" ;
 
+ function loadConfetti()
+{
+    const start = () => {
+        setTimeout(function() {
+            confetti.start()
+        }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    };
+    
+    //  for stopping the confetti 
+    
+    const stop = () => {
+        setTimeout(function() {
+            confetti.stop()
+        }, 10000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    };
+    // after this here we are calling both the function so it works
+    start();
+    stop();
 
+}
 
 function addobject(name, price, source) {
     this.name = name;
@@ -37,7 +53,7 @@ addtoarray("Vase en Ouraline",117,"Objects/vase-ouraline.jpg",objectarray);
 function InputImage()
 {
     console.log(document.getElementById("PseudoInput").value);
-    clearIntervale(periode);
+    clearInterval(periode);
     if (document.getElementById("PseudoInput").value=="")
     {
         alert("Veuillez indiquer votre pseudo ;-)");
@@ -115,11 +131,7 @@ function DisplayTable()
 
     }
 }
-function LoadPlayersRanking()
-{
-    let players=JSON.parse(localStorage.getItem("playersPlusOuMoins")||"[]");
-    DisplayTable();
-}
+
 
 function ModifyPlayersRanking()
 {
@@ -165,10 +177,9 @@ function compareprice()
                 } 
             };
             let vitesse=600;
-            document.getElementById('Result').appendChild(js);
+            document.getElementById('Result').onload=loadConfetti();
             periode = setInterval(clignotement, vitesse); 
             ModifyPlayersRanking();
-            document.getElementById('Result').removeChild(js);
 
         }
 
@@ -198,4 +209,3 @@ function LoadPlayersRanking()
 }
 
 LoadPlayersRanking();
-
