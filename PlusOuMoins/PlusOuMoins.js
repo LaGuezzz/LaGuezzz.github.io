@@ -67,7 +67,6 @@ class AddPlayer {
     }
 }
 
-
 function AddPlayerRow(Player)
 {
     const tablePlayers = document.getElementById("tblPlayers");
