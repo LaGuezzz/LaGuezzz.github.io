@@ -140,7 +140,7 @@ function loadConfetti()
     const start = () => {
         setTimeout(function() {
             confetti.start()
-        }, 500); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        }, 300); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
     };
     
     //  for stopping the confetti 
@@ -148,7 +148,7 @@ function loadConfetti()
     const stop = () => {
         setTimeout(function() {
             confetti.stop()
-        }, 10000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        }, 7000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
     };
     // after this here we are calling both the function so it works
     start();
