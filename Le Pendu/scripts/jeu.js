@@ -15,7 +15,7 @@ function motAleatoire(){
 function recolor(){
     let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     alphabet.forEach(lettre => {
-        document.getElementById(lettre).style.backgroundColor="#EDEEEE";
+        document.getElementById(lettre).style.backgroundColor="";
     } )
     
 }
