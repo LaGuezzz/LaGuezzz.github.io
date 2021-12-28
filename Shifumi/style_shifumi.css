@@ -15,8 +15,8 @@ main {
 }
 
 .ligne1 {
-    text-align: left;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns : 2fr, 1fr;
 }
 
 .wrapper {
