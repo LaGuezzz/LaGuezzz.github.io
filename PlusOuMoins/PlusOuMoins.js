@@ -38,6 +38,8 @@ function InputImage()
     }
     else
     {
+        document.getElementById("PseudoInput").style.display = "none";
+        document.getElementById("ObjectInput").style.display = "none";
         document.getElementById("price").style.display = "block";
         document.getElementById('Result').innerHTML="";
         if (!gameinprogress)
@@ -165,6 +167,8 @@ function compareprice()
             count++;
             div.innerHTML= "<span style='color: red; font-size:300%; font-weight:bold;'>YOU WIN!</span>";
             document.getElementById("price").style.display = "none";
+            document.getElementById("PseudoInput").style.display = "block";
+            document.getElementById("ObjectInput").style.display = "block";
             let clignotement = function(){ 
                 if (div.style.visibility=='visible'){ 
                    div.style.visibility='hidden'; 
