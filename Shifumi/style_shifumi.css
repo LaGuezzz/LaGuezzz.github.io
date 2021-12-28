@@ -30,7 +30,8 @@ main {
     grid-column: 1;
     grid-row: 1;
     width: 40%;
-    border: black solid
+    border: black solid;
+    margin: auto;
 }
 
 .deux {
@@ -38,13 +39,15 @@ main {
     grid-row: 1;
     width: 40%;
     border: black solid;
+    margin: auto;
 }
 
 .trois {
     grid-column: 2;
     grid-row: 2;
     width: 40%;
-    border: black solid
+    border: black solid;
+    margin: auto;
 }
 
 .result{
