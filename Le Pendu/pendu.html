@@ -9,108 +9,111 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Le Pendu</title>
 </head>
-<header>
-    <h1 id="pendu"> Le pendu </h1>
-    <div id="principe">
-        <p id="principe1"> Principe du jeu :</p>
-        <p> Tentez de deviner le mot secret en entrant des lettres une par une au clavier.
-            Ne gaspillez pas vos coups, car si trop de vos choix sont erronés vous tuerez
-            le pendu et vous perdrez la partie.
-        </p>
-    </div>
-</header>
-<br>
+
 <body>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-        <div>
+    <header>
+        <h1 id="pendu"> Le pendu </h1>
+        <div id="principe">
+            <p id="principe1"> Principe du jeu :</p>
+            <p> Tentez de deviner le mot secret en entrant des lettres une par une au clavier.
+                Ne gaspillez pas vos coups, car si trop de vos choix sont erronés vous tuerez
+                le pendu et vous perdrez la partie.
+            </p>
+        </div>
+    </header>
+    <br>
+    <main>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
             <div>
-                <input type="text" id="pseudo" placeholder="Pseudo">
-            </div>
-            <div class="">
-                <p>Commencez en tappant les lettres au clavier</p>
-                <div id="mot" class="mot"></div>
-                <p id="tentatives"></p>
-                <button id="start" class="button" onclick="startGame()" onclick="recolor()">Start</button>
-            </div>
-            <div id="conteneur">
-                <div class="centre" id="le_clavier" style="display: grid; grid-template-rows: repeat(2, 1fr);">
-                    <div>
-                        <div class="lettre" id="a">A</div>
-                        <div class="lettre" id="b">B</div>
-                        <div class="lettre" id="c">C</div>
-                        <div class="lettre" id="d">D</div>
-                        <div class="lettre" id="e">E</div>
-                        <div class="lettre" id="f">F</div>
-                        <div class="lettre" id="g">G</div>
-                        <div class="lettre" id="h">H</div>
-                        <div class="lettre" id="i">I</div>
-                        <div class="lettre" id="j">J</div>
-                        <div class="lettre" id="k">K</div>
-                        <div class="lettre" id="l">L</div>
-                        <div class="lettre" id="m">M</div>
-                    </div>
-                    <div>
-                        <div class="lettre" id="n">N</div>
-                        <div class="lettre" id="o">O</div>
-                        <div class="lettre" id="p">P</div>
-                        <div class="lettre" id="q">Q</div>
-                        <div class="lettre" id="r">R</div>
-                        <div class="lettre" id="s">S</div>
-                        <div class="lettre" id="t">T</div>
-                        <div class="lettre" id="u">U</div>
-                        <div class="lettre" id="v">V</div>
-                        <div class="lettre" id="w">W</div>
-                        <div class="lettre" id="x">X</div>
-                        <div class="lettre" id="y">Y</div>
-                        <div class="lettre" id="z">Z</div>
+                <div>
+                    <input type="text" id="pseudo" placeholder="Pseudo">
+                </div>
+                <div class="">
+                    <p>Commencez en tappant les lettres au clavier</p>
+                    <div id="mot" class="mot"></div>
+                    <p id="tentatives"></p>
+                    <button id="start" class="button" onclick="startGame()" onclick="recolor()">Start</button>
+                </div>
+                <div id="conteneur">
+                    <div class="centre" id="le_clavier" style="display: grid; grid-template-rows: repeat(2, 1fr);">
+                        <div>
+                            <div class="lettre" id="a">A</div>
+                            <div class="lettre" id="b">B</div>
+                            <div class="lettre" id="c">C</div>
+                            <div class="lettre" id="d">D</div>
+                            <div class="lettre" id="e">E</div>
+                            <div class="lettre" id="f">F</div>
+                            <div class="lettre" id="g">G</div>
+                            <div class="lettre" id="h">H</div>
+                            <div class="lettre" id="i">I</div>
+                            <div class="lettre" id="j">J</div>
+                            <div class="lettre" id="k">K</div>
+                            <div class="lettre" id="l">L</div>
+                            <div class="lettre" id="m">M</div>
+                        </div>
+                        <div>
+                            <div class="lettre" id="n">N</div>
+                            <div class="lettre" id="o">O</div>
+                            <div class="lettre" id="p">P</div>
+                            <div class="lettre" id="q">Q</div>
+                            <div class="lettre" id="r">R</div>
+                            <div class="lettre" id="s">S</div>
+                            <div class="lettre" id="t">T</div>
+                            <div class="lettre" id="u">U</div>
+                            <div class="lettre" id="v">V</div>
+                            <div class="lettre" id="w">W</div>
+                            <div class="lettre" id="x">X</div>
+                            <div class="lettre" id="y">Y</div>
+                            <div class="lettre" id="z">Z</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <table border="1" id="tblPlayers">
-                <thead>
-                    <tr>
-                        <th colspan="4">
-                            <span id="top"> TOP 10 </span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th> Pseudo </th>
-                        <th> Parties gagnées </th>
-                        <th> Parties jouées </th>
-                        <th> Pourcentage de victoire </th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div>
+                <table border="1" id="tblPlayers">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                <span id="top"> TOP 10 </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th> Pseudo </th>
+                            <th> Parties gagnées </th>
+                            <th> Parties jouées </th>
+                            <th> Pourcentage de victoire </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div id="image" src="./images/base.png"></div>
         </div>
-        <div id="image" src="./images/base.png"></div>
-    </div>
-    <script src="./scripts/pendu.js" defer></script>
-    <script src="./scripts/jeu.js" defer></script>
-    <script src="./scripts/players.js" defer></script>
+        <script src="./scripts/pendu.js" defer></script>
+        <script src="./scripts/jeu.js" defer></script>
+        <script src="./scripts/players.js" defer></script>
+    </main>
+    <footer>
+        <div id="footer">
+            <div id="shifumi">
+                <a href="../Shifumi/shifumi.html"> Shifumi </a>
+            </div>
+            <div id="pendu">
+                <a href="../Le Pendu/pendu.html"> Le Pendu </a>
+            </div>
+            <div id="accueil">
+                <a href="../index.html"> Accueil </a>
+            </div>
+            <div id="juste_prix">
+                <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+            </div>
+            <div id="nim">
+                <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
+            </div>
+        </div>
+    </footer>
 </body>
-<footer>
-    <div id="footer">
-        <div id="shifumi">
-            <a href="../Shifumi/shifumi.html"> Shifumi </a>
-        </div>
-        <div id="pendu">
-            <a href="../Le Pendu/pendu.html"> Le Pendu </a>
-        </div>
-        <div id="accueil">
-            <a href="../index.html"> Accueil </a>
-        </div>
-        <div id="juste_prix">
-            <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
-        </div>
-        <div id="nim">
-            <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
-        </div>
-    </div>
-</footer>
 
 </html>
