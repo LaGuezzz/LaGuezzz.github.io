@@ -11,21 +11,22 @@
     <title> Shifumi </title>
 </head>
 
-<header>
-    <h1 id="shifumi"> Pierre Papier Ciseaux </h1>
-    <div id="principe">
-        <p id="principe1"> Principe du jeu :</p>
-        <p> 
-            Choisissez un des trois éléments et tentez de battre l'ordi, sachant que la pierre bat les ciseaux,
-            les ciseaux la feuille et la feuille la pierre.
-        </p>
-    </div>
-</header>
-
 <body>
+    <header>
+        <h1 id="shifumi"> Pierre Papier Ciseaux </h1>
+        <div id="principe">
+            <p id="principe1"> Principe du jeu :</p>
+            <p>
+                Choisissez un des trois éléments et tentez de battre l'ordi, sachant que la pierre bat les ciseaux,
+                les ciseaux la feuille et la feuille la pierre.
+            </p>
+        </div>
+    </header>
 
-    <div class="ligne1">
-        <main>
+    <main>
+
+        <div class="ligne1">
+
             <div class="wrapper">
                 <input type="image" class="un" src="Images/paper.png" title="FEUILLE" width="20%" onclick=FEUILLE()>
                 <input type="image" class="deux" src="Images/scissors.png" title="CISEAUX" width="20%"
@@ -39,64 +40,65 @@
             <div>L'ordinateur joue : <b><span id="ordinateur"></span></b></div>
             <div>Résultat de la partie : <b><span id="resultat"></span></b></div>
 
-        </main>
 
-        <aside>
-            <tbody>
 
-                <tr>
-                    <td>
-                        <label> Nom du Joueur </label>
-                    </td>
-                    <td>
-                        <input type="text" id="PlayerName" />
-                    </td>
-                </tr>
+            <aside>
+                <tbody>
 
-            </tbody>
-
-            <table border='1' id="Historique">
-                <thead>
                     <tr>
-                        <th>Nom du Joueur</th>
-                        <th>Choix du Joueur</th>
-                        <th>Choix de l'Ordinateur</th>
-                        <th>Résultat</th>
+                        <td>
+                            <label> Nom du Joueur </label>
+                        </td>
+                        <td>
+                            <input type="text" id="PlayerName" />
+                        </td>
                     </tr>
-                </thead>
-                <tbody id="HistoriqueSelec">
+
                 </tbody>
 
-            </table>
-        </aside>
-    </div>
+                <table border='1' id="Historique">
+                    <thead>
+                        <tr>
+                            <th>Nom du Joueur</th>
+                            <th>Choix du Joueur</th>
+                            <th>Choix de l'Ordinateur</th>
+                            <th>Résultat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="HistoriqueSelec">
+                    </tbody>
 
-    <article>
+                </table>
+            </aside>
+        </div>
+
+        <article>
 
 
-    </article>
+        </article>
 
 
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div id="shifumi">
+                <a href="../Shifumi/shifumi.html"> Shifumi </a>
+            </div>
+            <div id="pendu">
+                <a href="../Le Pendu/pendu.html"> Le Pendu </a>
+            </div>
+            <div id="accueil">
+                <a href="../index.html"> Accueil </a>
+            </div>
+            <div id="juste_prix">
+                <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+            </div>
+            <div id="nim">
+                <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
+            </div>
+        </div>
+    </footer>
 </body>
-
-<footer>
-    <div id="footer">
-        <div id="shifumi">
-            <a href="../Shifumi/shifumi.html"> Shifumi </a>
-        </div>
-        <div id="pendu">
-            <a href="../Le Pendu/pendu.html"> Le Pendu </a>
-        </div>
-        <div id="accueil">
-            <a href="../index.html"> Accueil </a>
-        </div>
-        <div id="juste_prix">
-            <a href="../PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
-        </div>
-        <div id="nim">
-            <a href="../Jeu_de_nim/Jeu_de_Nim.html"> Jeu de Nim </a>
-        </div>
-    </div>
-</footer>
 
 </html>
