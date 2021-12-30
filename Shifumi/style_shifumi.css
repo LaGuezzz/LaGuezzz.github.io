@@ -24,12 +24,10 @@ html, body {
 aside {
     width: 20%;
     display: inline-table;
-    font-size: x-large;
 }
 
 main {
     text-align: center;
-    font-size: x-large;
 }
 
 .ligne1 {
