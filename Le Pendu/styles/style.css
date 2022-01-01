@@ -11,8 +11,15 @@ body
 	margin:auto;
 }
 
+#main {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
 .centre
 {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
 	width:-webkit-fill-available;
 	float:left;
 	text-align:center;
