@@ -12,7 +12,6 @@ LoadplayersNimRanking();
 
 function EndGame(win) {
     ActuTabScore(win);
-    //document.getElementById("tblPlayers").innerHTML = "";
     document.getElementById("allumettes").innerHTML = "";
     ActuAffScore();
     document.getElementById("info_jeu").style.display = "block";
