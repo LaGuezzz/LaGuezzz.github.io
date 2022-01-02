@@ -16,6 +16,14 @@ body
 	grid-template-columns: repeat(2, 1fr);
 }
 
+#info {
+	display: block;
+}
+
+#consigne {
+	display: none;
+}
+
 .centre
 {
 	display: grid;
