@@ -20,7 +20,7 @@ body
 	display: block;
 }
 
-#consigne {
+#consigne, #conteneur {
 	display: none;
 }
 
