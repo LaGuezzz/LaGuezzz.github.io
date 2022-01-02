@@ -45,6 +45,8 @@ let startGame = () => {
     if (document.getElementById("pseudo").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
     } else {
+        document.getElementById("info").style.display = "none";
+        document.getElementById("consigne").style.display = "block";
         joueur = new Player(document.getElementById("pseudo").value, 0, 0);
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
@@ -66,6 +68,8 @@ function EndGame(win) {
     document.getElementById("tblPlayers").innerHTML = "";
     ActuAffScore();
     butt.disabled = false;
+    document.getElementById("info").style.display = "block";
+    document.getElementById("consigne").style.display = "none";
     recolor();
 }
 
