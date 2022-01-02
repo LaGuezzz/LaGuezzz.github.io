@@ -47,6 +47,7 @@ let startGame = () => {
     } else {
         document.getElementById("info").style.display = "none";
         document.getElementById("consigne").style.display = "block";
+        document.getElementById("conteneur").style.display = "block";
         joueur = new Player(document.getElementById("pseudo").value, 0, 0);
         if (!(players.find(player => player.Pseudo==joueur.Pseudo))) {
             players.push(joueur);
@@ -70,6 +71,7 @@ function EndGame(win) {
     butt.disabled = false;
     document.getElementById("info").style.display = "block";
     document.getElementById("consigne").style.display = "none";
+    document.getElementById("conteneur").style.display = "none";
     recolor();
 }
 
