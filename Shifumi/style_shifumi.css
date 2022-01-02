@@ -13,12 +13,12 @@ main {
 
 .ligne1 {
     display: grid;
-    grid-template-rows : 2fr 1fr;
+    grid-template-columns : 2fr 1fr;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns : repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
