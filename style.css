@@ -22,12 +22,8 @@ h1 {
     text-decoration: underline;
 }
 
-footer {
-    display: flex;
-}
-
 #footer {
-    position:absolute;
+    position:static;
     bottom:0;
     left: 0;
     right: 0;
