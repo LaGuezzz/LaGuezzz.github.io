@@ -186,7 +186,7 @@ function DisplayTable()
         "<th rowspan='2'> Pourcentage de victoire </th><th rowspan='2'> Parties jouées </th><th rowspan='2'> Nombre de coups moyen </th>"+
         "<th colspan='2'> Parties </th><th rowspan='2'> Pourcentage de victoire </th></tr>"+
         "<tr><th> Gagnées </th><th> Jouées </th><th> Gagnées </th><th> Jouées </th><th> Gagnées </th> <th> Jouées </th> </tr>"+
-        "</thead><tbody> </tbody>";
+        "</thead>";
     console.log(playersTotal);
     playersTotal.sort((Player1,Player2)=>Player2.Total-Player1.Total);
     if (playersTotal.length>10)
