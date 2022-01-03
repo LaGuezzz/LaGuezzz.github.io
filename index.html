@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style_garde.css">
+    <script type="text/javascript" src="./index.js" defer></script>
+    <title>4 mini-jeux</title>
+</head>
+
+<header>
+    <div class="intro">
+        <img src="Images/laughing-emoji.gif" alt="emoji qui rigole" width="20%">
+        <h1 id="accueil">
+            4 MINI-JEUX POUR SE PROCURER DU FUN
+        </h1>
+        <img src="Images/laughing-emoji.gif" alt="emoji qui rigole" width="20%">
+    </div>
+</header>
+
+<body>
+    <main>
+        <div class="options">
+            <div id="shifumi">
+                <a href="Shifumi/shifumi.html"> Shifumi </a>
+            </div>
+            <div id="pendu">
+                <a href="Le Pendu/pendu.html"> Le Pendu </a>
+            </div>
+            <div id="juste_prix">
+                <a href="PlusOuMoins/PlusOuMoins.html"> Le Juste Prix </a>
+            </div>
+            <div id="nim">
+                <a href="Jeu_de_nim/Jeu_de_Nim.html">Le jeu de Nim</a>
+            </div>
+        </div>
+        <br>
+        <div class="options">
+            <div class="conteneur">
+                <img src="Images/shifumi.jpg" class="imgcontenu" alt="shifumi" width="60%">
+                <div class="txtcontenu" style="color:magenta">
+                    Aka le "Pierre-Papiers-Ciseaux". Choisissez un des trois éléments et tentez de battre l'ordi,
+                    sachant que la pierre bat les ciseaux, les ciseaux la feuille et la feuille la pierre.
+                </div>
+            </div>
+            <div class="conteneur">
+                <img src="Images/pendu.gif" class="imgcontenu" alt="le pendu" width="50%">
+                <div class="txtcontenu" style="color:lime">
+                    Tentez de deviner le mot secret en entrant des lettres une par une au clavier.
+                    Ne gaspillez pas vos coups, car si trop de vos choix sont erronés vous tuerez le pendu
+                    et vous perdrez la partie.
+                </div>
+            </div>
+            <div class="conteneur">
+                <img src="Images/juste_prix.png" class="imgcontenu" alt="le juste prix" width="60%">
+                <div class="txtcontenu" style="color:cyan">
+                    Le célèbre jeu de Vincent Lagaf. Le principe est simple: un objet est généré
+                    aléatoirement et votre mission est de trouver son prix exact avec le moins d'essais.
+                </div>
+            </div>
+            <div class="conteneur">
+                <img src="Images/jeu_de_Nim.png" class="imgcontenu" alt="jeu de nim" width="100%">
+                <div class="txtcontenu" style="color:yellow">
+                    21 allumettes sont disposées devant vous. Chacun votre tour, vous pourrez décider
+                    d'en enlever 1, 2 ou 3. Celui qui enlève la dernière allumette a perdu.
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <div>
+        <table border="1" id="tblPlayers">
+            <thead>
+                <tr>
+                    <th colspan="13">
+                        <span id="top"> TOP 10 </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th rowspan="3"> Pseudo </th>
+                    <th colspan="3"> Score <span id="shifumi"> Shifumi </span> </th>
+                    <th colspan="3"> Score <span id="pendu"> Pendu </span> </th>
+                    <th colspan="2"> Score <span id="juste_prix"> Juste Prix </span> </th>
+                    <th colspan="3"> Score <span id="nim"> Jeu de Nim </span></th>
+                    <th rowspan="3"> SCORE TOTAL </th>
+                </tr>
+                <tr>
+                    <th colspan="2"> Parties </th>
+                    <th rowspan="2"> Pourcentage de victoire </th>
+                    <th colspan="2"> Parties </th>
+                    <th rowspan="2"> Pourcentage de victoire </th>
+                    <th rowspan="2"> Parties jouées</th>
+                    <th rowspan="2"> Nombre de coups moyen </th>
+                    <th colspan="2"> Parties </th>
+                    <th rowspan="2"> Pourcentage de victoire </th>
+                </tr>
+                <tr>
+                    <th> Jouées </th>
+                    <th> Gagnées </th>
+                    <th> Jouées </th>
+                    <th> Gagnées </th>
+                    <th> Jouées </th>
+                    <th> Gagnées </th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
