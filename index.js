@@ -1,6 +1,7 @@
 playersNim=JSON.parse(localStorage.getItem("playersNim")||"[]");
 playersPlusOuMoins=JSON.parse(localStorage.getItem("playersPlusOuMoins")||"[]");
 playersPendu=JSON.parse(localStorage.getItem("playersPendu")||"[]");
+playersShifumi=JSON.parse(localStorage.getItem("playersShifumi")||"[]");
 playersTotal=JSON.parse(localStorage.getItem("playersTotal")||"[]");
 
 console.log(playersTotal);
@@ -75,6 +76,28 @@ function AddNim()
     }
 }
 
+function AddShifumi()
+{
+    for (i=0;i<playersShifumi.length;i++)
+    {
+        if (playersTotal.find((Player) =>Player.Pseudo==playersShifumi[i].Pseudo))
+        {
+            Player=playersTotal.findIndex((Player)=>Player.Pseudo==playersShifumi[i].Pseudo);
+            playersTotal[Player].PlayedShifumi=playersShifumi[i].Played;
+            playersTotal[Player].WinShifumi=playersShifumi[i].Win;
+            playersTotal[Player].PercentageShifumi=playersShifumi[i].Percentage;
+            playersTotal[Player].Total=CalcTotal(playersTotal[Player].PercentageShifumi,playersTotal[Player].PercentagePendu,playersTotal[Player].ScorePlusOuMoins,playersTotal[Player].PercentageNim);
+
+        }
+        else
+        {
+            let p=new AddPlayer(playersShifumi[i].Pseudo,playersShifumi[i].Played,playersShifumi[i].Win,playersShifumi[i].Percentage,0,0,0,0,0,0,0,0);
+            p.Total=CalcTotal(p.PercentageShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
+            playersTotal.push(p);
+        }
+    }
+}
+
 function AddPendu()
 {
     for (i=0;i<playersPendu.length;i++)
@@ -102,6 +125,7 @@ function ModifyPlayersTotal()
     AddPlusOuMoins();
     AddNim();
     AddPendu();
+    AddShifumi();
     localStorage.setItem("playersTotal", JSON.stringify(playersTotal));
 
 }
