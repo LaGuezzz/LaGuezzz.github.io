@@ -72,7 +72,7 @@ function JOUER() {
     if (document.getElementById("PlayerName").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
     } else {
-        joueur = new Player(document.getElementById("pseudo").value, 0, 0);
+        joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
         if (!(playersShifumi.find(player => player.Pseudo==joueur.Pseudo))) {
             playersShifumi.push(joueur);
         }
