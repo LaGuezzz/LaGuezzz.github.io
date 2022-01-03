@@ -3,6 +3,10 @@
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+body {
+	text-align: center;
+}
+
 #tblPlayers {
     display: table;
     margin-left: auto;
