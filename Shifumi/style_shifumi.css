@@ -24,7 +24,7 @@ img {
     width: 40%;
     border: black solid;
     margin: auto;
-    border-radios: 30%;
+    border-radius: 30%;
 }
 .un {
     grid-column: 1;
