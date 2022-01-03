@@ -4,8 +4,20 @@ html {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+
 body {
     text-align: center;
+	display : table;
+	width: 100%;
+}
+
+footer {
+	display : table-row;
+	height: 100px; /* à titre d'exemple */
 }
 
 h1 {
