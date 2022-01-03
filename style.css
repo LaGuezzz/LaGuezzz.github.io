@@ -4,6 +4,10 @@ html {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
 }
