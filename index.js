@@ -91,7 +91,7 @@ function AddShifumi()
         }
         else
         {
-            let p=new AddPlayer(playersShifumi[i].Pseudo,playersShifumi[i].Played,playersShifumi[i].Win,playersShifumi[i].Percentage,0,0,0,0,0,0,0,0);
+            let p=new AddPlayer(playersShifumi[i].Pseudo,playersShifumi[i].Win,playersShifumi[i].Played,playersShifumi[i].Percentage,0,0,0,0,0,0,0,0);
             p.Total=CalcTotal(p.PercentageShifumi,p.PercentagePendu,p.ScorePlusOuMoins,p.PercentageNim);
             playersTotal.push(p);
         }
