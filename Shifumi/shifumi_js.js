@@ -1,39 +1,68 @@
 let userChoice;
 let final;
+let playersShifumi = new Array;
+let joueur;
+
+class Player {
+    constructor(pseudo, win, played) {
+        this.Pseudo = pseudo;
+        this.Win = win;
+        this.Played = played;
+        this.Percentage = (this.Win / this.Played) * 100;
+    }
+}
+
+function ActuTabScore(final) {
+    let index = playersShifumi.findIndex((player) => player.Pseudo == joueur.Pseudo);
+    if (final == 1) {
+        playersShifumi[index].Win++;
+    }
+    playersShifumi[index].Played++;
+    playersShifumi[index].Percentage = (playersShifumi[index].Win / playersShifumi[index].Played) * 100;
+    playersShifumi.sort(function(a,b) {
+        if (b.Percentage != a.Percentage) {
+            return b.Percentage - a.Percentage;
+        } else {
+            return b.Played - a.Played;
+        }
+    });
+    localStorage.setItem("playersShifumi", JSON.stringify(playersShifumi));
+}
+
+function LoadplayersShifumiRanking() {
+    playersShifumi=JSON.parse(localStorage.getItem("playersShifumi")||"[]");
+}
+LoadplayersShifumiRanking();
 
 function CISEAUX() {
-    document.getElementById("ordinateur").classList.remove("result")
-    document.getElementById("resultat").classList.remove("result")
+    document.getElementById("ordinateur").classList.remove("result");
+    document.getElementById("resultat").classList.remove("result");
     userChoice = 0;
     console.log("Vous choisissez Ciseaux");
-    document.getElementById("Joueur").innerText = "Ciseaux"
-    document.getElementById("ordinateur").innerText = ""
-    document.getElementById("resultat").innerText = ""
+    document.getElementById("Joueur").innerText = "Ciseaux";
+    document.getElementById("ordinateur").innerText = "";
+    document.getElementById("resultat").innerText = "";
 }
 
 function FEUILLE() {
-    document.getElementById("ordinateur").classList.remove("result")
-    document.getElementById("resultat").classList.remove("result")
+    document.getElementById("ordinateur").classList.remove("result");
+    document.getElementById("resultat").classList.remove("result");
     userChoice = 1;
     console.log("Vous choisissez Feuille");
-    document.getElementById("Joueur").innerText = "Feuille"
-    document.getElementById("ordinateur").innerText = ""
-    document.getElementById("resultat").innerText = ""
-
+    document.getElementById("Joueur").innerText = "Feuille";
+    document.getElementById("ordinateur").innerText = "";
+    document.getElementById("resultat").innerText = "";
 }
 
 function PIERRE() {
-    document.getElementById("ordinateur").classList.remove("result")
-    document.getElementById("resultat").classList.remove("result")
+    document.getElementById("ordinateur").classList.remove("result");
+    document.getElementById("resultat").classList.remove("result");
     userChoice = 2;
     console.log("Vous choisissez Pierre");
-    document.getElementById("Joueur").innerText = "Pierre"
-    document.getElementById("ordinateur").innerText = ""
-    document.getElementById("resultat").innerText = ""
-
+    document.getElementById("Joueur").innerText = "Pierre";
+    document.getElementById("ordinateur").innerText = "";
+    document.getElementById("resultat").innerText = "";
 }
-
-
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -43,6 +72,10 @@ function JOUER() {
     if (document.getElementById("PlayerName").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
     } else {
+        joueur = new Player(document.getElementById("pseudo").value, 0, 0);
+        if (!(playersShifumi.find(player => player.Pseudo==joueur.Pseudo))) {
+            playersShifumi.push(joueur);
+        }
         final = 0;
         IA = getRandomInt(3);
 
@@ -151,7 +184,7 @@ function JOUER() {
         }
         ligne.appendChild(celluleres);
 
-
         TableHist.appendChild(ligne);
+        ActuTabScore(final);
     }
 }
