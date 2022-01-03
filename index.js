@@ -154,11 +154,15 @@ function AddPlayerRow(Player)
 
 function DisplayTable()
 {
-    document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='11'><span id='top'> TOP 10 </span></th></tr><tr>"+
-        "<th rowspan='2'> Pseudo </th><th> Score <span id='shifumi'> Shifumi</span> </th><th colspan='3'> Score <span id='pendu'> Pendu </span> </th>"+
-        "<th colspan='2'> Score <span id='juste_prix'> Juste Prix </span> </th><th colspan='3'> Score <span id='nim'> Jeu de Nim </span></th>"+
-        "<th rowspan='2'> SCORE TOTAL </th></tr><tr><th> </th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th>"+
-        "<th> Parties jouées </th><th> Nombre de coups moyen </th><th> Parties gagnées </th><th> Parties jouées </th><th> Pourcentage de victoire </th></tr></thead><tbody> </tbody>";
+    document.getElementById("tblPlayers").innerHTML="<thead><tr><th colspan='13'><span id='top'> TOP 10 </span></th></tr>"+
+        "<tr><th rowspan='3'> Pseudo </th><th colspan='3'> Score <span id='shifumi'> Shifumi</span> </th>"+
+        "<th colspan='3'> Score <span id='pendu'> Pendu </span> </th><th colspan='2'> Score <span id='juste_prix'> Juste Prix </span> </th>"+
+        "<th colspan='3'> Score <span id='nim'> Jeu de Nim </span></th><th rowspan='3'> SCORE TOTAL </th></tr>"+
+        "<tr><th colspan='2'> Parties </th><th rowspan='2'> Pourcentage de victoire </th><th colspan='2'> Parties </th>"+
+        "<th rowspan='2'> Pourcentage de victoire </th><th rowspan='2'> Parties jouées </th><th rowspan='2'> Nombre de coups moyen </th>"+
+        "<th colspan='2'> Parties </th><th rowspan='2'> Pourcentage de victoire </th></tr>"+
+        "<tr><th> Jouées </th><th> Gagnées </th><th> Jouées </th><th> Gagnées </th><th> Jouées </th> <th> Gagnées </th> </tr>"+
+        "</thead><tbody> </tbody>";
     console.log(playersTotal);
     playersTotal.sort((Player1,Player2)=>Player2.Total-Player1.Total);
     if (playersTotal.length>10)
