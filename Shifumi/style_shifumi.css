@@ -2,6 +2,12 @@
     background: red;
 }
 
+#Historique {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .ligne1 {
     display: grid;
     grid-template-columns : 3fr 2fr;
