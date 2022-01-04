@@ -199,12 +199,14 @@ function JOUER() {
         let choixordi = document.getElementById("ordinateur").textContent;
         partie = new Game(pseudo, choixjoueur, choixordi, final);
         Jeux.push(partie);
-        if (Jeux.length>15) {
+        console.log(Jeux);
+        if (Jeux.length>10) {
             Jeux.shift();
         }
+        console.log(Jeux);
         document.getElementById("HistoriqueSelec").innerHTML="";
         for (let i = 0; i <= Jeux.length; i++) {
-            AffGame(Jeux[i]);
+            AddPlayer(Jeux[i]);
         }
         ActuTabScore(final);
     }
