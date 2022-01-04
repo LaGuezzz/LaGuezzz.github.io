@@ -118,6 +118,7 @@ function JOUER() {
     } else if (!(userChoice==0 || userChoice==1 || userChoice==2)) {
         alert("Veuillez choir ce que vous jouez ;-)");
     } else {
+        let pseudo = document.getElementById("PlayerName").value;
         joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
         if (!(playersShifumi.find(player => player.Pseudo == joueur.Pseudo))) {
             playersShifumi.push(joueur);
@@ -194,17 +195,14 @@ function JOUER() {
             console.log("Perdu");
         }
 
-        let pseudo = document.getElementById("PlayerName").value;
         let choixjoueur = document.getElementById("Joueur").textContent;
         let choixordi = document.getElementById("ordinateur").textContent;
         partie = new Game(pseudo, choixjoueur, choixordi, final);
         console.log(partie);
         Jeux.push(partie);
-        console.log(Jeux);
         if (Jeux.length>10) {
             Jeux.shift();
         }
-        console.log(Jeux);
         document.getElementById("HistoriqueSelec").innerHTML="";
         for (let i = 0; i <= Jeux.length; i++) {
             AffGame(Jeux[i]);
