@@ -1,8 +1,51 @@
 let userChoice;
-console.log(userChoice);
 let final;
 let playersShifumi = new Array;
 let joueur;
+let Jeux = new Array;
+let partie;
+
+class Game {
+    constructor(pseudo, choixjoueur, choixordi, resultat) {
+        this.Pseudo = pseudo;
+        this.ChoixJoueur = choixjoueur;
+        this.ChoixOrdi = choixordi;
+        this.Resultat = resultat;
+    }
+}
+
+function AffGame(partie) {
+    const NomJoueur = partie.Pseudo;
+    const TableHist = document.getElementById("HistoriqueSelec");
+    const ligne = document.createElement("tr");
+    const choix = partie.ChoixJoueur;
+    const fin = partie.ChoixOrdi;
+
+    const cellulenom = document.createElement("td");
+    cellulenom.innerText = NomJoueur;
+    ligne.appendChild(cellulenom);
+
+    const cellulechoix = document.createElement("td");
+    cellulechoix.innerText = choix;
+    ligne.appendChild(cellulechoix);
+
+    const cellulefin = document.createElement("td");
+    cellulefin.innerText = fin;
+    ligne.appendChild(cellulefin);
+
+    const celluleres = document.createElement("td");
+    if (partie.Resultat == 0) {
+        celluleres.style.backgroundColor = "yellow";
+    }
+    else if (partie.Resultat == 1) {
+        celluleres.style.backgroundColor = "green";
+    }
+    else if (partie.Resultat == 2) {
+        celluleres.style.backgroundColor = "red";
+    }
+    ligne.appendChild(celluleres);
+    TableHist.appendChild(ligne);
+}
 
 class Player {
     constructor(pseudo, win, played) {
@@ -72,7 +115,7 @@ function getRandomInt(max) {
 function JOUER() {
     if (document.getElementById("PlayerName").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
-    } else if (userChoice!=0 && userChoice!=1 && userChoice!=2) {
+    } else if (!(userChoice==0 || userChoice==1 || userChoice==2)) {
         alert("Veuillez choir ce que vous jouez ;-)");
     } else {
         joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
@@ -119,69 +162,50 @@ function JOUER() {
         }
 
         if (IA == 0) {
-            document.getElementById("ordinateur").classList.add("result")
-            document.getElementById("ordinateur").innerText = "Ciseaux"
+            document.getElementById("ordinateur").classList.add("result");
+            document.getElementById("ordinateur").innerText = "Ciseaux";
             console.log("L'ordinateur a joué Ciseaux");
         }
         else if (IA == 1) {
-            document.getElementById("ordinateur").classList.add("result")
-            document.getElementById("ordinateur").innerText = "Feuille"
+            document.getElementById("ordinateur").classList.add("result");
+            document.getElementById("ordinateur").innerText = "Feuille";
             console.log("L'ordinateur a joué Feuille");
         }
         else if (IA == 2) {
-            document.getElementById("ordinateur").classList.add("result")
-            document.getElementById("ordinateur").innerText = "Pierre"
+            document.getElementById("ordinateur").classList.add("result");
+            document.getElementById("ordinateur").innerText = "Pierre";
             console.log("L'ordinateur a joué Pierre");
         }
 
         if (final == 0) {
-            document.getElementById("resultat").classList.add("result")
-            document.getElementById("resultat").innerText = "Match Nul"
+            document.getElementById("resultat").classList.add("result");
+            document.getElementById("resultat").innerText = "Match Nul";
             console.log("Match Nul");
         }
         else if (final == 1) {
-            document.getElementById("resultat").classList.add("result")
-            document.getElementById("resultat").innerText = "Vous avez gagné"
+            document.getElementById("resultat").classList.add("result");
+            document.getElementById("resultat").innerText = "Vous avez gagné";
             console.log("Gagné");
         }
         else if (final == 2) {
-            document.getElementById("resultat").classList.remove("result")
-            document.getElementById("resultat").classList.add("result")
-            document.getElementById("resultat").innerText = "Vous avez perdu"
+            document.getElementById("resultat").classList.remove("result");
+            document.getElementById("resultat").classList.add("result");
+            document.getElementById("resultat").innerText = "Vous avez perdu";
             console.log("Perdu");
         }
 
-        const NomJoueur = document.getElementById("PlayerName").value;
-        const TableHist = document.getElementById("HistoriqueSelec");
-        const ligne = document.createElement("tr");
-        const choix = document.getElementById("Joueur").textContent;
-        const fin = document.getElementById("ordinateur").textContent;
-
-        const cellulenom = document.createElement("td");
-        cellulenom.innerText = NomJoueur;
-        ligne.appendChild(cellulenom);
-
-        const cellulechoix = document.createElement("td");
-        cellulechoix.innerText = choix;
-        ligne.appendChild(cellulechoix);
-
-        const cellulefin = document.createElement("td");
-        cellulefin.innerText = fin;
-        ligne.appendChild(cellulefin);
-
-        const celluleres = document.createElement("td");
-        if (final == 0) {
-            celluleres.style.backgroundColor = "yellow";
+        let pseudo = document.getElementById("PlayerName").value;
+        let choixjoueur = document.getElementById("Joueur").textContent;
+        let choixordi = document.getElementById("ordinateur").textContent;
+        partie = new Game(pseudo, choixjoueur, choixordi, final);
+        Jeux.push(partie);
+        if (Jeux.length>15) {
+            Jeux.shift();
         }
-        else if (final == 1) {
-            celluleres.style.backgroundColor = "green";
+        document.getElementById("HistoriqueSelec").innerHTML="";
+        for (let i = 0; i <= Jeux.length; i++) {
+            AddPlayer(Jeux[i]);
         }
-        else if (final == 2) {
-            celluleres.style.backgroundColor = "red";
-        }
-        ligne.appendChild(celluleres);
-
-        TableHist.appendChild(ligne);
         ActuTabScore(final);
     }
 }
