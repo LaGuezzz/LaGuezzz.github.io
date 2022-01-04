@@ -19,7 +19,7 @@ function ActuTabScore(final) {
     }
     playersShifumi[index].Played++;
     playersShifumi[index].Percentage = (playersShifumi[index].Win / playersShifumi[index].Played) * 100;
-    playersShifumi.sort(function(a,b) {
+    playersShifumi.sort(function (a, b) {
         if (b.Percentage != a.Percentage) {
             return b.Percentage - a.Percentage;
         } else {
@@ -30,7 +30,7 @@ function ActuTabScore(final) {
 }
 
 function LoadplayersShifumiRanking() {
-    playersShifumi=JSON.parse(localStorage.getItem("playersShifumi")||"[]");
+    playersShifumi = JSON.parse(localStorage.getItem("playersShifumi") || "[]");
 }
 LoadplayersShifumiRanking();
 
@@ -73,14 +73,14 @@ function JOUER() {
         alert("Veuillez indiquer votre pseudo ;-)");
     } else {
         joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
-        if (!(playersShifumi.find(player => player.Pseudo==joueur.Pseudo))) {
+        if (!(playersShifumi.find(player => player.Pseudo == joueur.Pseudo))) {
             playersShifumi.push(joueur);
         }
         final = 0;
         IA = getRandomInt(3);
 
-        //Si l'utilisateur joue CISEAUX
         if (userChoice == 0) {
+            //Si l'utilisateur joue CISEAUX
             if (IA == 0) {
                 document.getElementById("resultat").innerText = "Match Nul"
                 final = 0; //Match nul
@@ -91,11 +91,8 @@ function JOUER() {
             else if (IA == 2) {
                 final = 2; //Défaite
             }
-        }
-
-
-        //Si l'utilisateur joue FEUILLE
-        if (userChoice == 1) {
+        } else if (userChoice == 1) {
+            //Si l'utilisateur joue FEUILLE
             if (IA == 0) {
                 final = 2; //Défaite
             }
@@ -105,10 +102,8 @@ function JOUER() {
             else if (IA == 2) {
                 final = 1; //Victoire
             }
-        }
-
-        //Si l'utilisateur joue PIERRE
-        if (userChoice == 2) {
+        } else if (userChoice == 2) {
+            //Si l'utilisateur joue PIERRE
             if (IA == 0) {
                 final = 1; //Victoire
             }
@@ -118,6 +113,8 @@ function JOUER() {
             else if (IA == 2) {
                 final == 0; //Match Nul
             }
+        } else {
+            alert("Veuillez faire un choix ;-)");
         }
 
         if (IA == 0) {
@@ -135,7 +132,6 @@ function JOUER() {
             document.getElementById("ordinateur").innerText = "Pierre"
             console.log("L'ordinateur a joué Pierre");
         }
-
 
         if (final == 0) {
             document.getElementById("resultat").classList.add("result")
