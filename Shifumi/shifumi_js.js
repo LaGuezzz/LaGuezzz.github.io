@@ -207,7 +207,7 @@ function JOUER() {
         console.log(Jeux);
         document.getElementById("HistoriqueSelec").innerHTML="";
         for (let i = 0; i <= Jeux.length; i++) {
-            AddPlayer(Jeux[i]);
+            AffGame(Jeux[i]);
         }
         ActuTabScore(final);
     }
