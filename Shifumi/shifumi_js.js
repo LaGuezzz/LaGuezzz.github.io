@@ -71,6 +71,8 @@ function getRandomInt(max) {
 function JOUER() {
     if (document.getElementById("PlayerName").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
+    } else if (!userChoice) {
+        alert("Veuillez choir ce que vous jouez ;-)");
     } else {
         joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
         if (!(playersShifumi.find(player => player.Pseudo == joueur.Pseudo))) {
