@@ -1,4 +1,5 @@
 let userChoice;
+console.log(userChoice);
 let final;
 let playersShifumi = new Array;
 let joueur;
@@ -115,8 +116,6 @@ function JOUER() {
             else if (IA == 2) {
                 final == 0; //Match Nul
             }
-        } else {
-            alert("Veuillez faire un choix ;-)");
         }
 
         if (IA == 0) {
