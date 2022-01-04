@@ -198,6 +198,7 @@ function JOUER() {
         let choixjoueur = document.getElementById("Joueur").textContent;
         let choixordi = document.getElementById("ordinateur").textContent;
         partie = new Game(pseudo, choixjoueur, choixordi, final);
+        console.log(partie);
         Jeux.push(partie);
         console.log(Jeux);
         if (Jeux.length>10) {
