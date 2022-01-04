@@ -194,7 +194,9 @@ function JOUER() {
             document.getElementById("resultat").innerText = "Vous avez perdu";
             console.log("Perdu");
         }
-
+        
+        ActuTabScore(final);
+        
         let choixjoueur = document.getElementById("Joueur").textContent;
         let choixordi = document.getElementById("ordinateur").textContent;
         partie = new Game(pseudo, choixjoueur, choixordi, final);
@@ -207,6 +209,5 @@ function JOUER() {
         for (let i = 0; i <= Jeux.length; i++) {
             AffGame(Jeux[i]);
         }
-        ActuTabScore(final);
     }
 }
