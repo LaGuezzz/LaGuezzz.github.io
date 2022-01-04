@@ -72,7 +72,7 @@ function getRandomInt(max) {
 function JOUER() {
     if (document.getElementById("PlayerName").value == "") {
         alert("Veuillez indiquer votre pseudo ;-)");
-    } else if (!userChoice) {
+    } else if (userChoice!=0 || userChoice!=1 || userChoice!=2) {
         alert("Veuillez choir ce que vous jouez ;-)");
     } else {
         joueur = new Player(document.getElementById("PlayerName").value, 0, 0);
