@@ -1,4 +1,3 @@
-
 class Pendu {
     constructor(mot, tentativesRestantes){
         this.mot = mot.toLowerCase().split('');
@@ -26,9 +25,9 @@ class Pendu {
         let isBadGuess = !this.mot.includes(guess);
         let nbErreurs = 0;
         
-    if (this.status !== 'playing'){
-        return
-    }
+        if (this.status !== 'playing'){
+            return
+        }
     
         if (isUnique){
             this.guessedLetters.push(guess)
@@ -43,12 +42,23 @@ class Pendu {
     }
 
     get statusMessage(){
+        
         if (this.status === 'playing'){
             return `Tentatives restantes: ${this.tentativesRestantes}`
         } else if (this.status === 'failed') {
-            return `Dommage! le mot était "${this.mot.join('')}" `
+            if(!alerted)
+            {
+                alerted=1
+                setTimeout(() => { alert(`Dommage! le mot était "${this.mot.join('')}" `) }, 10)
+
+            }
+            
         } else {
-            return "Bien joué! vous avez trouvé le mot!"
+            if(!alerted)
+            {
+                alerted=1
+                alert("Bien joué! vous avez trouvé le mot!")
+            }
         }
     }
 
@@ -69,11 +79,5 @@ class Pendu {
         }
     }
 
-}
-
-function image(indice){
-    let img = document.createElement("img");
-    img.src = "./images/Pendu_"+indice+".png";
-    document.getElementById('image').replaceChildren(img);
 }
 
