@@ -7,7 +7,7 @@ let alerted = 0;
 
 function motAleatoire(){
 
-    let dictionnaire = ['lapin','poulet','marmotte','chamois','rat','chat','faucon','cheval','salamandre','chien','coq','abeille','baleine','bison','canard','carpe','cochon','crapaud','dinde','crapaud','faisan','girafe','gorille','lion','loup','ours','renard','sanglier','serpent','singe','souris','tigre','vache'];
+    let dictionnaire = ['lapin','poulet','marmotte','chamois','rat','chat','faucon','cheval','salamandre','chien','coq','abeille','baleine','bison','canard','carpe','cochon','crapaud','dinde','faisan','girafe','gorille','lion','loup','ours','renard','sanglier','serpent','singe','souris','tigre','vache'];
     let random = Math.floor(Math.random()*(dictionnaire.length-1));
 
     return(dictionnaire[random]);
